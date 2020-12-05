@@ -1,0 +1,10 @@
+.site {
+	display: flex;
+	flex-direction: column;
+	margin: 0vw 15vw;
+	margin-top: 1rem;
+	position: relative;
+	@include respond("lg") {
+		margin-top: 0rem;
+	}
+}

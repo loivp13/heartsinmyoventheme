@@ -1,0 +1,36 @@
+.footer {
+	&-connect {
+		background-color: $light;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		&-header {
+			color: $primary;
+			font-size: 4rem;
+			font-family: $font-nami;
+		}
+		&-form {
+			& input {
+				width: 100%;
+			}
+			& > i {
+				height: 100%;
+				padding: 11px;
+				position: absolute;
+				right: 1%;
+			}
+		}
+		&-subscribe {
+			display: flex;
+			flex-direction: column;
+			font-family: $font;
+			font-size: 2rem;
+			position: relative;
+		}
+	}
+
+	& > * {
+		margin-bottom: 1rem;
+	}
+}

@@ -1,0 +1,80 @@
+#carouselExampleIndicators {
+	height: 50vh;
+}
+
+.carousel {
+	&-banner {
+		margin-bottom: 6rem;
+	}
+	&-caption {
+		align-self: center;
+		width: 50%;
+		background-color: $light;
+		right: 0%;
+		left: 25%;
+		bottom: 21%;
+	}
+	&-control {
+		&-prev {
+			justify-content: flex-start;
+			& > i {
+				font-size: 3rem;
+			}
+		}
+		&-prev:hover {
+			color: $primary;
+		}
+		&-next {
+			justify-content: flex-end;
+			& > i {
+				font-size: 3rem;
+			}
+		}
+		&-next:hover {
+			color: $primary;
+		}
+	}
+
+	&-favorites {
+		&-title {
+			background-color: $light;
+			font-family: $font;
+			letter-spacing: 15px;
+			margin-bottom: 2rem;
+			padding: 0.5rem;
+			text-align: center;
+			width: 35%;
+		}
+	}
+
+	&-indicators {
+		bottom: -45px;
+		& > li {
+			background-color: $primary;
+			background-clip: inherit;
+			border-radius: 50px;
+			border-top: none;
+			border-bottom: none;
+			height: 15px;
+			margin-right: 10px;
+			margin-left: 10px;
+			width: 15px;
+		}
+	}
+	&-inner {
+		height: 100%;
+	}
+	&-item {
+		transform: translateY(-10%);
+		// display: flex;
+		// justify-content: center;
+		&-img {
+			height: 100%;
+			width: 100%;
+		}
+		&-title {
+			position: absolute;
+			bottom: 21%;
+		}
+	}
+}

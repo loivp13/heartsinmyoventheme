@@ -1,0 +1,19 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+$primary: #e0a3ab;
+$secondary: #e2d1c7;
+$tertiary: #aad1be;
+$tertiary-light: #cee8d2;
+$dark: #383838;
+$light: #e9e2dc;
+
+$font: "Montserrat", sans-serif;
+$font-nami: "Tangerine", cursive;
+
+@import "./mixins/mixins";
+
+@import "./components/card";
+@import "./components/carousel";
+@import "./components/footer";
+@import "./components/logo";
+@import "./components/nav";
