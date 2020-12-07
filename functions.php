@@ -1,4 +1,5 @@
 <?php
+
 /**
  * UnderStrap functions and definitions
  *
@@ -6,7 +7,7 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 // UnderStrap's includes directory.
 $understrap_inc_dir = get_template_directory() . '/inc';
@@ -29,16 +30,24 @@ $understrap_includes = array(
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
-if ( class_exists( 'WooCommerce' ) ) {
+if (class_exists('WooCommerce')) {
 	$understrap_includes[] = '/woocommerce.php';
 }
 
 // Load Jetpack compatibility file if Jetpack is activiated.
-if ( class_exists( 'Jetpack' ) ) {
+if (class_exists('Jetpack')) {
 	$understrap_includes[] = '/jetpack.php';
 }
 
 // Include files.
-foreach ( $understrap_includes as $file ) {
+foreach ($understrap_includes as $file) {
 	require_once $understrap_inc_dir . $file;
 }
+register_nav_menus(array(
+	'primary'   => __('Home Menu', 'Home'),
+	'secondary' => __('Blog Menu', 'Blog'),
+	'tertiary' => __('Recipes Menu', 'Recipes'),
+	'quaternary' => __('About Menu', 'About'),
+	'fifth' => __('Contact Menu', 'Contact'),
+
+));

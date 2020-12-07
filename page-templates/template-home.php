@@ -88,14 +88,14 @@ if (is_front_page()) {
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
-                                <div class="col-4 card">
+                                <div class="col-6 col-md-4 card">
                                     <img class="carousel-item-img card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananaberrybreadpudding01.png" alt="">
                                     <div class="card-body">
                                         <h4 class="text-center">Bananaberry Bread Pudding</h4>
                                     </div>
 
                                 </div>
-                                <div class="col-4 card">
+                                <div class="col-6 col-md-4 card">
                                     <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananacrumbcake01.png" alt="">
                                     <div class="card-body">
                                         <h4 class="text-center">Banana Crumbcake</h4>
@@ -103,7 +103,7 @@ if (is_front_page()) {
 
 
                                 </div>
-                                <div class="col-4 card">
+                                <div class="col-6 col-md-4 card d-none d-md-block">
                                     <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bbshortbread02.png" alt="">
                                     <div class="card-body">
                                         <h4 class="text-center">BB Short Bread</h4>
@@ -118,14 +118,14 @@ if (is_front_page()) {
                         </div>
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-4 card">
+                                <div class="col-6 col-md-4 card">
                                     <img class="carousel-item-img card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/minieggcake02.png" alt="">
                                     <div class="card-body">
                                         <h4 class="text-center">Mini Eggcake</h4>
                                     </div>
 
                                 </div>
-                                <div class="col-4 card">
+                                <div class="col-6 col-md-4 card">
                                     <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/redvelvetcookies02.png" alt="">
                                     <div class="card-body">
                                         <h4 class="text-center">Red Velvet Cookie</h4>
@@ -133,7 +133,7 @@ if (is_front_page()) {
 
 
                                 </div>
-                                <div class="col-4 card">
+                                <div class="col-6 col-md-4 card d-none d-md-block">
                                     <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/redvelvettccookies01.png" alt="">
                                     <div class="card-body">
                                         <h4 class="text-center">Red Velvet Cookie</h4>

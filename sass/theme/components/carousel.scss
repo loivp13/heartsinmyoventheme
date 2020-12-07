@@ -1,24 +1,35 @@
 #carouselExampleIndicators {
-	height: 50vh;
+	height: 28vh;
+	@include respond("md") {
+		height: 50vh;
+	}
 }
-
+.card {
+	border: none;
+	& > div > h4 {
+		font-size: 1rem;
+		font-family: $font;
+		@include respond("md") {
+			font-size: 1.3rem;
+		}
+	}
+}
 .carousel {
 	&-banner {
 		margin-bottom: 6rem;
 	}
 	&-caption {
 		align-self: center;
-		width: 50%;
 		background-color: $light;
-		right: 0%;
-		left: 25%;
-		bottom: 21%;
 	}
 	&-control {
 		&-prev {
 			justify-content: flex-start;
 			& > i {
-				font-size: 3rem;
+				font-size: 1.5rem;
+				@include respond("md") {
+					font-size: 3rem;
+				}
 			}
 		}
 		&-prev:hover {
@@ -27,7 +38,10 @@
 		&-next {
 			justify-content: flex-end;
 			& > i {
-				font-size: 3rem;
+				font-size: 1.5rem;
+				@include respond("md") {
+					font-size: 3rem;
+				}
 			}
 		}
 		&-next:hover {
@@ -39,11 +53,14 @@
 		&-title {
 			background-color: $light;
 			font-family: $font;
-			letter-spacing: 15px;
+			letter-spacing: 5px;
 			margin-bottom: 2rem;
-			padding: 0.5rem;
+			padding: 0.75rem;
 			text-align: center;
-			width: 35%;
+			width: 100%;
+			@include respond("md") {
+				width: 30%;
+			}
 		}
 	}
 
@@ -69,12 +86,16 @@
 		// display: flex;
 		// justify-content: center;
 		&-img {
-			height: 100%;
-			width: 100%;
+			height: auto;
+			width: auto;
+			@include respond("md") {
+				height: auto;
+				width: 100%;
+			}
 		}
 		&-title {
-			position: absolute;
 			bottom: 21%;
+			color: $primary;
 		}
 	}
 }
