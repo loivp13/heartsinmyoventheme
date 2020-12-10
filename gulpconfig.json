@@ -1,7 +1,7 @@
 {
 	"browserSyncOptions": {
 		"proxy": "heartsinmyoven.localhost",
-		"notify": false,
+		"notify": true,
 		"files": ["./css/*.min.css", "./js/*.min.js", "./**/*.php"]
 	},
 	"paths": {

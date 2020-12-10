@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -12,32 +13,32 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod('understrap_container_type');
 ?>
 
-<?php if ( is_front_page() && is_home() ) : ?>
-	<?php get_template_part( 'global-templates/hero' ); ?>
+<?php if (is_front_page() && is_home()) : ?>
+	<?php get_template_part('global-templates/hero'); ?>
 <?php endif; ?>
 
 <div class="wrapper" id="index-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 
 			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+			<?php get_template_part('global-templates/left-sidebar-check'); ?>
 
 			<main class="site-main" id="main">
 
 				<?php
-				if ( have_posts() ) {
+				if (have_posts()) {
 					// Start the Loop.
-					while ( have_posts() ) {
+					while (have_posts()) {
 						the_post();
 
 						/*
@@ -45,10 +46,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
+						get_template_part('loop-templates/content', get_post_format());
 					}
 				} else {
-					get_template_part( 'loop-templates/content', 'none' );
+					get_template_part('loop-templates/content', 'none');
 				}
 				?>
 
@@ -58,7 +59,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php understrap_pagination(); ?>
 
 			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+			<?php get_template_part('global-templates/right-sidebar-check'); ?>
 
 		</div><!-- .row -->
 

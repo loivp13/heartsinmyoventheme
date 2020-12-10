@@ -48,6 +48,6 @@ register_nav_menus(array(
 	'secondary' => __('Blog Menu', 'Blog'),
 	'tertiary' => __('Recipes Menu', 'Recipes'),
 	'quaternary' => __('About Menu', 'About'),
-	'fifth' => __('Contact Menu', 'Contact'),
+	'quinary' => __('Contact Menu', 'Contact'),
 
 ));

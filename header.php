@@ -28,6 +28,17 @@ $container = get_theme_mod('understrap_container_type');
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 	<?php do_action('wp_body_open'); ?>
+	<div class="header">
+		<div class="container d-flex">
+			<div class="header-logo">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/favorites/HeartsLogoFinal.png" alt="">
+			</div>
+			<div class="header_widget">
+				<?php dynamic_sidebar('navmenu') ?>
+			</div>
+
+		</div>
+	</div>
 	<div class="site" id="page">
 
 		<!-- ******************* The Navbar Area ******************* -->
@@ -45,6 +56,8 @@ $container = get_theme_mod('understrap_container_type');
 				<!-- The WordPress Menu goes here -->
 				<?php
 				//on Home Page
+				// var_dump(get_query_var('paged'));
+
 				if (is_front_page()) {
 
 					wp_nav_menu(
@@ -59,7 +72,7 @@ $container = get_theme_mod('understrap_container_type');
 							'theme_location'  => 'primary'
 						)
 					);
-				} else if (is_page(331)) {
+				} else if (is_home()) {
 					wp_nav_menu(
 						array(
 							'container_class' => 'collapse navbar-collapse',
@@ -108,14 +121,13 @@ $container = get_theme_mod('understrap_container_type');
 							'menu_id'         => 'main-menu',
 							'depth'           => 2,
 							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-							'theme_location'  => 'fifth'
+							'theme_location'  => 'quinary'
 						)
 					);
 				}
 				?>
 
 		</nav><!-- .site-navigation -->
-		<img src="<?php echo get_template_directory_uri(); ?>/img/HeartsinmyovenLogo.png" alt="">
 
 
 	</div><!-- #wrapper-navbar end -->
