@@ -1,0 +1,23 @@
+.border {
+	&-tertiary {
+		&-reg {
+			border: 1px solid $tertiary;
+		}
+	}
+}
+.border {
+	&-primary {
+		&-reg {
+			border: 1px solid $primary;
+			box-sizing: border-box;
+		}
+	}
+}
+.border {
+	&-light {
+		&-reg {
+			border: 1px solid $light;
+			box-sizing: border-box;
+		}
+	}
+}

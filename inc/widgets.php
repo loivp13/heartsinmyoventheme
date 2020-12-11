@@ -176,7 +176,7 @@ if (!function_exists('understrap_widgets_init')) {
 				'name'          => __('Nav Menu', 'understrap'),
 				'id'            => 'navmenu',
 				'description'   => __('Nav widget with dynamic grid', 'understrap'),
-				'before_widget' => '<div id="%1$s" class="footer-widget %2$s dynamic-classes">',
+				'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
 				'after_widget'  => '</div><!-- .footer-widget -->',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',

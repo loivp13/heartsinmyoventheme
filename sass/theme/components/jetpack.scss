@@ -1,0 +1,23 @@
+.jetpack {
+	&_widget {
+		&_social {
+			&_icons {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				& ul {
+					margin: 0rem 0rem 0.5rem 0rem !important;
+					& li {
+						margin-right: 30px !important;
+					}
+					&.size-small {
+						& a {
+							height: 20px !important;
+							width: 20px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

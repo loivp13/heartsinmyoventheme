@@ -1,0 +1,9 @@
+.header {
+	position: sticky;
+	top: 0px;
+	z-index: 101;
+	&_widget {
+		display: flex;
+		justify-content: center;
+	}
+}

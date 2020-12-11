@@ -28,18 +28,18 @@ $container = get_theme_mod('understrap_container_type');
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 	<?php do_action('wp_body_open'); ?>
-	<div class="header">
-		<div class="container d-flex">
-			<div class="header-logo">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/favorites/HeartsLogoFinal.png" alt="">
+	<div class="header mt-3 pb-3">
+		<div class="container d-flex justify-content-between align-items-center">
+			<div class="header-logo col-6 col-md-4">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/favorites/Final.png" alt="">
 			</div>
-			<div class="header_widget">
+			<div class="header_widget col-6 col-md-4 d-flex flex-column">
 				<?php dynamic_sidebar('navmenu') ?>
 			</div>
 
 		</div>
 	</div>
-	<div class="site" id="page">
+	<div class="site mt-5  bg-white" id="page">
 
 		<!-- ******************* The Navbar Area ******************* -->
 
