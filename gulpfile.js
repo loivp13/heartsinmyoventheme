@@ -233,7 +233,7 @@ gulp.task( 'copy-assets', function( done ) {
 
 	// Copy all Font Awesome Fonts
 	gulp
-		.src( paths.node + '/font-awesome/fonts/**/*.{ttf,woff,woff2,eot,svg}' )
+		.src( paths.node + '/font-awesome/fonts/**/*.{ttf,woff,otf,woff2,eot,svg}' )
 		.pipe( gulp.dest( paths.fonts ) );
 
 	// Copy all Font Awesome SCSS files

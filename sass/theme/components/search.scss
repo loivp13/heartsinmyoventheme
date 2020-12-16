@@ -1,0 +1,29 @@
+#searchform {
+	width: 40%;
+	@include respond("md") {
+		width: auto;
+	}
+}
+#s {
+	&:focus {
+		border-color: $primary !important;
+	}
+	& + span {
+		& > button {
+			& > i {
+				font-size: 10px;
+			}
+		}
+	}
+}
+#search-12 {
+	display: flex;
+	justify-content: flex-end;
+	& > form {
+		& > .input-group {
+			& > * {
+				height: 1.75rem;
+			}
+		}
+	}
+}

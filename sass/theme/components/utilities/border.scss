@@ -1,23 +1,28 @@
 .border {
-	&-tertiary {
-		&-reg {
-			border: 1px solid $tertiary;
-		}
-	}
-}
-.border {
-	&-primary {
-		&-reg {
+	&-left {
+		&-1 {
 			border: 1px solid $primary;
-			box-sizing: border-box;
 		}
 	}
-}
-.border {
 	&-light {
 		&-reg {
 			border: 1px solid $light;
 			box-sizing: border-box;
+		}
+	}
+	&-none {
+		border: none;
+	}
+	&-primary {
+		&-reg {
+			border: 1px solid $primary;
+			box-sizing: border-box;
+			border-radius: 1px;
+		}
+	}
+	&-tertiary {
+		&-reg {
+			border: 1px solid $tertiary;
 		}
 	}
 }
