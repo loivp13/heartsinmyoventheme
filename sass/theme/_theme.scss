@@ -1,24 +1,44 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+@font-face {
+	font-family: "LemonMilkLight";
+	src: url("../fonts/LEMONMILK-Light.woff") format("woff");
+	font-weight: light;
+}
+@font-face {
+	font-family: "LemonMilkRegular";
+	font-weight: regular;
+	src: url("../fonts/LEMONMILK-Regular.woff") format("opentype");
+}
 
 $primary: #e0a3ab;
 $secondary: #e2d1c7;
 $tertiary: #aad1be;
 $tertiary-light: #cee8d2;
 $dark: #383838;
+$light-dark: #979898;
 $light: #e9e2dc;
 
-$font: "Montserrat", sans-serif;
-$font-nami: "Tangerine", cursive;
+$font: "LemonMilkLight";
+$font-nami: "Tangerine";
+$font-monts: "Montseratt";
+
+body {
+	// padding: %;
+}
 
 @import "./mixins/mixins";
+@import "./components/animations/main";
 
+@import "./components/btn";
 @import "./components/card";
 @import "./components/carousel";
 @import "./components/header";
+@import "./components/icons";
 @import "./components/jetpack";
 @import "./components/footer";
 @import "./components/logo";
 @import "./components/nav";
+@import "./components/search";
 @import "./components/site";
 
 @import "./components/utilities/main";

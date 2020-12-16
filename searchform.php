@@ -11,11 +11,11 @@ defined('ABSPATH') || exit;
 ?>
 
 <form method="get" id="searchform" action="<?php echo esc_url(home_url('/')); ?>" role="search">
-	<label class="sr-only" for="s"><?php esc_html_e('Search', 'understrap'); ?></label>
+	<label class="sr-only" for="s"><?php esc_html_e('search', 'understrap'); ?></label>
 	<div class="input-group">
-		<input class="field form-control border-light-reg text-primary" id="s" name="s" type="text" placeholder="<?php esc_attr_e('Search', 'understrap'); ?>" value="<?php the_search_query(); ?>">
+		<input class="field form-control border-primary-reg border-right-0 text-light-dark" id="s" name="s" type="text" placeholder="<?php esc_attr_e('search', 'understrap'); ?>" value="<?php the_search_query(); ?>">
 		<span class="input-group-append">
-			<button class="btn btn-primary bg-white text-primary border-primary-reg"><i class="fa fa-search"></i></button>
+			<button class="btn btn-icon btn-primary bg-white text-primary border-left-0 border-primary-reg"><i class="fa fa-search"></i></button>
 		</span>
 	</div>
 </form>

@@ -1,7 +1,7 @@
 #carouselExampleIndicators {
-	height: 28vh;
+	// height: 28vh;
 	@include respond("md") {
-		height: 50vh;
+		// height: 60vh;
 	}
 }
 .card {
@@ -13,14 +13,40 @@
 			font-size: 1.3rem;
 		}
 	}
+	&-body {
+		color: $light-dark;
+	}
 }
 .carousel {
 	&-banner {
 		margin-bottom: 6rem;
 	}
 	&-caption {
+		padding: 0.5rem;
 		align-self: center;
-		background-color: $light;
+		justify-content: center;
+		background-color: rgba(255, 255, 255, 0.897);
+		bottom: 0px;
+		color: $light-dark;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		width: auto;
+		right: none;
+		left: 50%;
+		transform: translateX(-50%);
+		min-width: 65%;
+		@include respond("md") {
+			min-width: 45%;
+			padding: 1rem36;
+		}
+		& > h3 {
+			font-family: $font;
+			font-size: 0.55rem;
+			display: inline;
+			@include respond("md") {
+				font-size: 1rem;
+			}
+		}
 	}
 	&-control {
 		&-prev {
@@ -33,7 +59,7 @@
 			}
 		}
 		&-prev:hover {
-			color: $primary;
+			color: white;
 		}
 		&-next {
 			justify-content: flex-end;
@@ -45,7 +71,7 @@
 			}
 		}
 		&-next:hover {
-			color: $primary;
+			color: white;
 		}
 	}
 
@@ -57,7 +83,7 @@
 			margin-bottom: 2rem;
 			padding: 0.75rem;
 			text-align: center;
-			width: 100%;
+			width: 60%;
 			@include respond("md") {
 				width: 30%;
 			}
@@ -65,9 +91,12 @@
 	}
 
 	&-indicators {
-		bottom: -45px;
+		bottom: -55px;
+		& .active {
+			background-color: $tertiary;
+		}
 		& > li {
-			background-color: $primary;
+			background-color: $secondary;
 			background-clip: inherit;
 			border-radius: 50px;
 			border-top: none;
@@ -82,7 +111,7 @@
 		height: 100%;
 	}
 	&-item {
-		transform: translateY(-10%);
+		// transform: translateY(-10%);
 		// display: flex;
 		// justify-content: center;
 		&-img {
@@ -94,8 +123,14 @@
 			}
 		}
 		&-title {
-			bottom: 21%;
+			// bottom: 21%;
 			color: $primary;
+		}
+	}
+	&-hero {
+		width: 90vw;
+		@include respond("xl") {
+			width: 70vw;
 		}
 	}
 }

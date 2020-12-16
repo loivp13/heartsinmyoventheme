@@ -1,8 +1,27 @@
-#main-nav {
+#navbarNavDropdown {
 	position: absolute;
+	background-color: rgba(255, 255, 255, 0.938);
+	padding: 1rem;
+	border: 2px;
+	width: 100vw;
+	left: -7vw;
+	@include respond("sm") {
+		position: absolute;
+		left: -3vw;
+	}
+	@include respond("md") {
+		position: initial;
+		left: initial;
+		width: initial;
+		// height: 50%;
+	}
+}
+#main-nav {
 	padding: 0rem;
+
 	@include respond("lg") {
 		position: relative;
+		left: 0vw;
 	}
 	& + img {
 		margin: 3rem 0rem;
@@ -10,16 +29,15 @@
 }
 #main-menu {
 	font-size: 1.25rem;
-	margin-bottom: 2rem;
 	font-family: $font;
-	border-bottom: 1px solid $secondary;
 	@include respond("sm") {
-		font-size: 1.5rem;
 	}
 	div {
 		a {
 			padding-left: 3rem;
 			padding-right: 3rem;
+			@include respond("sm") {
+			}
 		}
 	}
 }
@@ -32,6 +50,30 @@
 }
 
 .nav-link {
+	padding: 1rem;
+	color: $light-dark;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-right: 10px;
+	letter-spacing: 3px;
+	border-bottom: 1px solid $secondary;
+	@include respond("sm") {
+		font-size: 18px;
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	}
+	@include respond("md") {
+		font-size: 16px;
+		border-bottom: none;
+	}
+	@include respond("lg") {
+		font-size: 16px;
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	}
+	@include respond("xl") {
+		font-size: 20px;
+	}
 }
 
 .mobile-menu-dropdown {

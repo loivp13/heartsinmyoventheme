@@ -1,3 +1,9 @@
+.text-light-dark {
+	color: $light-dark;
+	&::placeholder {
+		color: $light-dark;
+	}
+}
 .text-primary {
 	color: $primary;
 	&::placeholder {

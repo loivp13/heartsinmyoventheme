@@ -2,8 +2,17 @@
 	position: sticky;
 	top: 0px;
 	z-index: 101;
+	padding: 5px;
+
 	&_widget {
+		justify-content: flex-end;
 		display: flex;
-		justify-content: center;
+		display: none;
+		@include respond("md") {
+			display: block;
+		}
+		@include respond("lg") {
+			max-width: 12rem;
+		}
 	}
 }

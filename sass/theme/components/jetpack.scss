@@ -2,16 +2,24 @@
 	&_widget {
 		&_social {
 			&_icons {
-				display: flex;
+				// display: flex;
 				justify-content: center;
 				align-items: center;
+				display: none;
+				@include respond("md") {
+					display: flex;
+				}
 				& ul {
+					width: 100%;
 					margin: 0rem 0rem 0.5rem 0rem !important;
+					display: flex !important;
+					justify-content: space-around !important;
 					& li {
-						margin-right: 30px !important;
+						// margin-right: 20px !important;
 					}
 					&.size-small {
 						& a {
+							color: $tertiary;
 							height: 20px !important;
 							width: 20px !important;
 						}

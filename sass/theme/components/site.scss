@@ -1,5 +1,26 @@
+*:focus {
+	outline: none !important;
+	box-shadow: none !important;
+	border-color: $primary;
+}
+
 .site {
 	position: sticky !important;
 	top: 0px;
 	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	padding: 1rem;
+	padding-right: 10%;
+	padding-left: 10%;
+	@include respond("sm") {
+		padding-right: 5%;
+		padding-left: 5%;
+	}
+	@include respond("lg") {
+		margin-top: 0rem;
+		padding-right: 10%;
+		padding-left: 10%;
+	}
 }
