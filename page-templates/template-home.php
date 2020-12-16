@@ -122,8 +122,8 @@ if (is_front_page()) {
                                     ?>
                                             <div class="col-6 col-md-4 col-lg-3 card 
                                                 <?php
-                                                echo $query->current_post === 3 ? 'd-none d-md-block' : '';
-                                                echo $query->current_post === 4 ? 'd-none d-md-none d-lg-block' : '';
+                                                echo $query->current_post === 2 ? 'd-none d-md-block' : '';
+                                                echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
                                                 ?>">
 
                                                 <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
@@ -143,68 +143,53 @@ if (is_front_page()) {
                                     wp_reset_postdata();
 
                                     ?>
-                                    <!-- <div class="col-6 col-md-4 col-lg-3 card">
-                                        <img class="carousel-item-img card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananacrumbcake01.png" alt="">
-                                        <div class="card-body">
-                                            <h4 class="text-center">Bananaberry Bread Pudding</h4>
-                                        </div>
 
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 card">
-                                        <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananacrumbcake01.png" alt="">
-                                        <div class="card-body">
-                                            <h4 class="text-center">Banana Crumbcake</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3 d-none d-md-block card">
-                                        <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bbshortbread02.png" alt="">
-                                        <div class="card-body">
-                                            <h4 class="text-center">BB Short Bread</h4>
-                                        </div>
-
-
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3  d-none d-md-none d-lg-block card">
-                                        <img class="carousel-item-img card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/minieggcake02.png" alt="">
-                                        <div class="card-body">
-                                            <h4 class="text-center">BB Short Bread</h4>
-                                        </div>
-                                    </div> -->
                                 </div>
 
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-6 col-md-4 col-lg-3 card">
-                                    <img class="carousel-item-img card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananaberrybreadpudding01.png" alt="">
-                                    <div class="card-body">
-                                        <h4 class="text-center">Bananaberry Bread Pudding</h4>
-                                    </div>
+                                <?php
 
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 card">
-                                    <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananacrumbcake01.png" alt="">
-                                    <div class="card-body">
-                                        <h4 class="text-center">Banana Crumbcake</h4>
-                                    </div>
+                                // The Query
+                                $arg = array(
+                                    'category_name'  => 'favorites',
+                                    'posts_per_page' => 4,
+                                    'order'          => 'date',
+                                    'offset'         => 4
+                                );
+                                $query = new WP_Query($arg);
 
+                                // The Loop
+                                if ($query->have_posts()) {
+                                    while ($query->have_posts()) {
+                                        $query->the_post();
+                                ?>
+                                        <div class="col-6 col-md-4 col-lg-3 card 
+                                                <?php
+                                                echo $query->current_post === 2 ? 'd-none d-md-block' : '';
+                                                echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
+                                                ?>">
 
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 d-none d-md-block card">
-                                    <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bbshortbread02.png" alt="">
-                                    <div class="card-body">
-                                        <h4 class="text-center">BB Short Bread</h4>
-                                    </div>
+                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
+                                            <div class="card-body">
+                                                <h4><?php
+                                                    the_title();
+                                                    ?></h4>
+                                            </div>
 
+                                        </div>
 
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3  d-none d-md-none d-lg-block card">
-                                    <img class="carousel-item-img" src="<?php echo get_template_directory_uri(); ?>/img/favorites/minieggcake02.png" alt="">
-                                    <div class="card-body">
-                                        <h4 class="text-center">BB Short Bread</h4>
-                                    </div>
-                                </div>
+                                <?php }
+                                } else {
+                                    // no posts found
+                                }
+                                /* Restore original Post Data */
+                                wp_reset_postdata();
+
+                                ?>
+
                             </div>
                         </div>
                     </div>
