@@ -105,7 +105,45 @@ if (is_front_page()) {
                         <div class="carousel-item active">
                             <div class="row">
                                 <div class="card-group row">
-                                    <div class="col-6 col-md-4 col-lg-3 card">
+                                    <?php
+
+                                    // The Query
+                                    $arg = array(
+                                        'category_name' => 'favorites',
+                                        'posts_per_page' => 4,
+                                        'order'         => 'date'
+                                    );
+                                    $query = new WP_Query($arg);
+
+                                    // The Loop
+                                    if ($query->have_posts()) {
+                                        while ($query->have_posts()) {
+                                            $query->the_post();
+                                    ?>
+                                            <div class="col-6 col-md-4 col-lg-3 card 
+                                                <?php
+                                                echo $query->current_post === 3 ? 'd-none d-md-block' : '';
+                                                echo $query->current_post === 4 ? 'd-none d-md-none d-lg-block' : '';
+                                                ?>">
+
+                                                <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
+                                                <div class="card-body">
+                                                    <h4><?php
+                                                        the_title();
+                                                        ?></h4>
+                                                </div>
+
+                                            </div>
+
+                                    <?php }
+                                    } else {
+                                        // no posts found
+                                    }
+                                    /* Restore original Post Data */
+                                    wp_reset_postdata();
+
+                                    ?>
+                                    <!-- <div class="col-6 col-md-4 col-lg-3 card">
                                         <img class="carousel-item-img card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananacrumbcake01.png" alt="">
                                         <div class="card-body">
                                             <h4 class="text-center">Bananaberry Bread Pudding</h4>
@@ -131,7 +169,7 @@ if (is_front_page()) {
                                         <div class="card-body">
                                             <h4 class="text-center">BB Short Bread</h4>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                             </div>
