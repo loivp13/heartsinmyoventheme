@@ -2,4 +2,19 @@
 	&-icon {
 		line-height: 0;
 	}
+	&-read-more {
+		position: relative;
+		font-style: $font;
+		& > p {
+			display: none;
+		}
+	}
+	&-offset-highlight {
+		position: absolute;
+		width: 100%;
+		height: 65%;
+		background-color: $secondary;
+		transform: translate(10%, -90%);
+		z-index: -12;
+	}
 }

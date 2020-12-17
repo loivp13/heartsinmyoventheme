@@ -51,3 +51,32 @@ register_nav_menus(array(
 	'quinary' => __('Contact Menu', 'Contact'),
 
 ));
+
+//Add post count 
+function get_post_counts()
+{
+	$count = get_post_meta(get_the_id(), 'post_views_count', true);
+	return "$count views";
+}
+function set_post_view()
+{
+	$key = 'post_views_count';
+	$post_id = get_the_id();
+	$count = get_post_meta($post_id, $key, true);
+	echo $count;
+	$count++;
+	update_post_meta($post_id, $key, $count);
+}
+function posts_column_views($columns)
+{
+	$columns['post_views'] = 'Views';
+	return $columns;
+}
+function posts_custom_column_views($column)
+{
+	if ($column === 'post_views') {
+		echo get_post_counts();
+	}
+}
+add_filter('manage_posts_columns', 'posts_column_views');
+add_action('manage_posts_custom_column', 'posts_custom_column_views');

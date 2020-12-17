@@ -32,7 +32,7 @@ $container = get_theme_mod('understrap_container_type');
 
 	<?php do_action('wp_body_open'); ?>
 	<div id='page' class="header site bg-white ">
-		<div class="row no-md-gutters d-flex bg-white flex-wrap flex-sm-no-wrap justify-content-end justify-content-md-start align-items-end align-item-sm-center align-items-md-center mb-md-0 mb-md-3">
+		<div class="row no-md-gutters d-flex bg-white flex-wrap flex-sm-no-wrap justify-content-end justify-content-md-start align-items-end align-item-sm-center align-items-md-center mb-md-0">
 
 			<!-- .site-navigation -->
 			<nav id="main-nav" class="col-2 col-md-6 navbar navbar-expand-md bg-white nav justify-content-md-around justify-content-lg-around  order-1 order-md-2" aria-labelledby="main-nav-label col-md-3">
@@ -122,7 +122,9 @@ $container = get_theme_mod('understrap_container_type');
 			</nav>
 			<!-- LOGO -->
 			<div class="header-logo col-8 col-md-3 order-2 order-md-1">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/favorites/Final.png" alt="">
+				<a href="<?php echo get_home_url(); ?>">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/favorites/Final.png" alt="">
+				</a>
 			</div>
 			<!-- Mobile Search Button -->
 			<button class="col-2 d-block d-md-none btn btn-icon btn-primary bg-white text-primary border-none btn-mobile order-3">

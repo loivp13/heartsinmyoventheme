@@ -47,17 +47,22 @@ if (is_front_page()) {
                             while ($query->have_posts()) {
                                 $query->the_post();
                         ?>
+
                                 <div class="carousel-item <?php
                                                             echo $query->current_post === 0 ? 'active' : '';
                                                             ?>">
+                                    <a href="<?php
+                                                echo get_permalink(get_the_id())
+                                                ?>">
+                                        <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img d-block w-100')); ?>
+                                        <div class="carousel-caption ">
+                                            <h3><?php
+                                                the_title();
+                                                echo ' ';
+                                                ?></h3>
+                                        </div>
 
-                                    <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img d-block w-100')); ?>
-                                    <div class="carousel-caption ">
-                                        <h3><?php
-                                            the_title();
-                                            ?></h3>
-                                    </div>
-
+                                    </a>
                                 </div>
 
                         <?php }
@@ -120,18 +125,19 @@ if (is_front_page()) {
                                         while ($query->have_posts()) {
                                             $query->the_post();
                                     ?>
-                                            <div class="col-6 col-md-4 col-lg-3 card 
+                                            <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
                                                 ?>">
-
-                                                <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
-                                                <div class="card-body">
-                                                    <h4><?php
-                                                        the_title();
-                                                        ?></h4>
-                                                </div>
+                                                <a href="<?php echo get_permalink(get_the_id()); ?>">
+                                                    <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
+                                                    <div class="card-body">
+                                                        <h4><?php
+                                                            echo wp_trim_words(get_the_title(), 5);
+                                                            ?></h4>
+                                                    </div>
+                                                </a>
 
                                             </div>
 
@@ -166,18 +172,19 @@ if (is_front_page()) {
                                     while ($query->have_posts()) {
                                         $query->the_post();
                                 ?>
-                                        <div class="col-6 col-md-4 col-lg-3 card 
+                                        <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
                                                 ?>">
-
-                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
-                                            <div class="card-body">
-                                                <h4><?php
-                                                    the_title();
-                                                    ?></h4>
-                                            </div>
+                                            <a href="<?php echo get_permalink(get_the_id()) ?>">
+                                                <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
+                                                <div class="card-body">
+                                                    <h4><?php
+                                                        echo wp_trim_words(get_the_title(), 5);
+                                                        ?></h4>
+                                                </div>
+                                            </a>
 
                                         </div>
 
@@ -217,55 +224,56 @@ if (is_front_page()) {
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div id="carousel-favorites" class="carousel slide" data-ride="carousel">
+                <div id="carousel-reader-favorites" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-favorites" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-favorites" data-slide-to="1"></li>
+                        <li data-target="#carousel-reader-favorites" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-reader-favorites" data-slide-to="1"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
-                                <div class="card-group row">
-                                    <?php
+                                <?php
 
-                                    // The Query
-                                    $arg = array(
-                                        'category_name' => 'favorites',
-                                        'posts_per_page' => 4,
-                                        'order'         => 'date'
-                                    );
-                                    $query = new WP_Query($arg);
+                                // The Query
+                                $arg = array(
+                                    'meta_key' => "post_views_count",
+                                    'posts_per_page' => 4,
+                                    'orderby' => 'meta_value_num'
+                                );
+                                $query = new WP_Query($arg);
 
-                                    // The Loop
-                                    if ($query->have_posts()) {
-                                        while ($query->have_posts()) {
-                                            $query->the_post();
-                                    ?>
-                                            <div class="col-6 col-md-4 col-lg-3 card 
+                                // The Loop
+                                if ($query->have_posts()) {
+                                    while ($query->have_posts()) {
+                                        $query->the_post();
+                                ?>
+                                        <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
                                                 ?>">
 
+
+                                            <a href="<?php echo get_permalink(get_the_id()); ?>">
                                                 <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
                                                 <div class="card-body">
                                                     <h4><?php
                                                         the_title();
                                                         ?></h4>
                                                 </div>
+                                            </a>
 
-                                            </div>
+                                        </div>
 
-                                    <?php }
-                                    } else {
-                                        // no posts found
-                                    }
-                                    /* Restore original Post Data */
-                                    wp_reset_postdata();
+                                <?php }
+                                } else {
+                                    // no posts found
+                                }
+                                /* Restore original Post Data */
+                                wp_reset_postdata();
 
-                                    ?>
+                                ?>
 
-                                </div>
 
                             </div>
                         </div>
@@ -287,18 +295,20 @@ if (is_front_page()) {
                                     while ($query->have_posts()) {
                                         $query->the_post();
                                 ?>
-                                        <div class="col-6 col-md-4 col-lg-3 card 
+                                        <div class="col-6 col-md-4 col-lg-3 card mb-0 p-1
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
                                                 ?>">
 
-                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
-                                            <div class="card-body">
-                                                <h4><?php
-                                                    the_title();
-                                                    ?></h4>
-                                            </div>
+                                            <a href="<?php echo get_permalink(get_the_id()); ?>">
+                                                <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
+                                                <div class="card-body">
+                                                    <h4><?php
+                                                        echo wp_trim_words(get_the_title(), 5);
+                                                        ?></h4>
+                                                </div>
+                                            </a>
 
                                         </div>
 
@@ -314,11 +324,11 @@ if (is_front_page()) {
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carousel-favorites" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carousel-reader-favorites" role="button" data-slide="prev">
                         <i class="fa fa-chevron-left"></i>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carousel-favorites" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carousel-reader-favorites" role="button" data-slide="next">
                         <i class="fa fa-chevron-right"></i>
 
                         <span class="sr-only">Next</span>
@@ -330,8 +340,8 @@ if (is_front_page()) {
     </div>
 </div>
 
-<div class="container">
-    <div class="carousel-favorites-title">
+<div class="container mb-3">
+    <div class="carousel-favorites-title text-light-dark">
         RECENTLY POPULAR
     </div>
     <div class="row">
@@ -344,62 +354,95 @@ if (is_front_page()) {
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-4 card">
-                                <img class="carousel-item-img card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananaberrybreadpudding01.png" alt="">
-                                <div class="card-body">
-                                    <h4 class="text-center">Bananaberry Bread Pudding</h4>
-                                </div>
+                            <?php
 
-                            </div>
-                            <div class="col-4 card">
-                                <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bananacrumbcake01.png" alt="">
-                                <div class="card-body">
-                                    <h4 class="text-center">Banana Crumbcake</h4>
-                                </div>
+                            // The Query
+                            $arg = array(
+                                'meta_key' => "post_views_count",
+                                'posts_per_page' => 4,
+                                'orderby' => 'meta_value_num'
+                            );
+                            $query = new WP_Query($arg);
+
+                            // The Loop
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
+                            ?>
+                                    <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0
+                                                <?php
+                                                echo $query->current_post === 2 ? 'd-none d-md-block' : '';
+                                                echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
+                                                ?>">
 
 
-                            </div>
-                            <div class="col-4 card">
-                                <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/bbshortbread02.png" alt="">
-                                <div class="card-body">
-                                    <h4 class="text-center">BB Short Bread</h4>
-                                </div>
+                                        <a href="<?php echo get_permalink(get_the_id()); ?>">
+                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
+                                            <div class="card-body">
+                                                <h4><?php
+                                                    the_title();
+                                                    ?></h4>
+                                            </div>
+                                        </a>
+
+                                    </div>
+
+                            <?php }
+                            } else {
+                                // no posts found
+                            }
+                            /* Restore original Post Data */
+                            wp_reset_postdata();
+
+                            ?>
 
 
-                            </div>
-                            <!-- <div class="col-3 card">
-                                    <img class="carousel-item-img" src="<?php echo get_template_directory_uri(); ?>/img/favorites/minieggcake02.png" alt="">
-                                </div> -->
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row">
-                            <div class="col-4 card">
-                                <img class="carousel-item-img card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/minieggcake02.png" alt="">
-                                <div class="card-body">
-                                    <h4 class="text-center">Mini Eggcake</h4>
-                                </div>
+                            <?php
 
-                            </div>
-                            <div class="col-4 card">
-                                <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/redvelvetcookies02.png" alt="">
-                                <div class="card-body">
-                                    <h4 class="text-center">Red Velvet Cookie</h4>
-                                </div>
+                            // The Query
+                            $arg = array(
+                                'category_name'  => 'favorites',
+                                'posts_per_page' => 4,
+                                'order'          => 'date',
+                                'offset'         => 4
+                            );
+                            $query = new WP_Query($arg);
 
+                            // The Loop
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
+                            ?>
+                                    <div class="col-6 col-md-4 col-lg-3 card mb-0 p-1
+                                                <?php
+                                                echo $query->current_post === 2 ? 'd-none d-md-block' : '';
+                                                echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
+                                                ?>">
 
-                            </div>
-                            <div class="col-4 card">
-                                <img class="carousel-item-img  card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/favorites/redvelvettccookies01.png" alt="">
-                                <div class="card-body">
-                                    <h4 class="text-center">Red Velvet Cookie</h4>
-                                </div>
+                                        <a href="<?php echo get_permalink(get_the_id()); ?>">
+                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
+                                            <div class="card-body">
+                                                <h4><?php
+                                                    echo wp_trim_words(get_the_title(), 5);
+                                                    ?></h4>
+                                            </div>
+                                        </a>
 
+                                    </div>
 
-                            </div>
-                            <!-- <div class="col-3 card">
-                                    <img class="carousel-item-img" src="<?php echo get_template_directory_uri(); ?>/img/favorites/minieggcake02.png" alt="">
-                                </div> -->
+                            <?php }
+                            } else {
+                                // no posts found
+                            }
+                            /* Restore original Post Data */
+                            wp_reset_postdata();
+
+                            ?>
+
                         </div>
                     </div>
                 </div>
