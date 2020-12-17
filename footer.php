@@ -23,16 +23,22 @@ $container = get_theme_mod('understrap_container_type');
 		</div>
 
 		<div class="footer-connect-subscribe  mb-5">
-			<div class="footer-connect-title">SUBSCRIBE TO GET NEW RECIPES</div>
-			<div class="footer-connect-form">
-				<input type="text" class="footer-connect-form">
-				<i class="fa fa-arrow-right"></i>
+			<div class="footer-connect-title text-light-dark">SUBSCRIBE TO GET NEW RECIPES</div>
+			<div class="footer-connect-form d-flex">
+				<input type="text" class="footer-connect-form border-primary-reg" placeholder="ENTER EMAIL">
+				<div class="footer_arrow_icon d-flex">
+					<img class="footer_arrow_image" src="<?php echo get_template_directory_uri(); ?>/img/arrow_right_icon.png" alt="">
+				</div>
 
 			</div>
 		</div>
 	</div>
 </div><!-- wrapper end -->
-
+<div class="container">
+	<div class="footer_copy_right text-primary d-flex justify-content-center mb-4">
+		© HEARTS IN MY OVEN. DESIGNED BY LOI V PHAM.
+	</div>
+</div>
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>

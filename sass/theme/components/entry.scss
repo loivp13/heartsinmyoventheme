@@ -1,0 +1,27 @@
+.entry {
+	&-content {
+		& > p {
+			text-indent: 1rem;
+		}
+	}
+	&-header {
+		& + img {
+			margin-bottom: 1rem;
+		}
+	}
+	&-footer {
+		& > .comments-link > a {
+			color: $light-dark;
+		}
+		& > .edit-link > a {
+			color: $light-dark;
+		}
+	}
+	&-title {
+		font-size: 1.5rem;
+	}
+	&-meta {
+		margin-bottom: 1rem;
+		font-size: 0.7rem;
+	}
+}

@@ -1,0 +1,26 @@
+.hr {
+	&-post {
+		margin-top: 3rem;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+	}
+	&-heart {
+		font-size: 1rem;
+		color: $primary;
+		transform: translateY(-50%);
+		background-color: white;
+		border-radius: 20px;
+		padding: 0rem 0.2rem;
+		& > i::before {
+		}
+	}
+	&-line {
+		height: 2px;
+		background-color: $tertiary;
+		width: 100%;
+	}
+}
