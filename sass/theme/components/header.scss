@@ -9,9 +9,9 @@
 		display: flex;
 		display: none;
 		@include respond("md") {
-			display: block;
 		}
 		@include respond("lg") {
+			display: block;
 			max-width: 12rem;
 		}
 	}

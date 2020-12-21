@@ -1,12 +1,12 @@
 .animate-slideRight {
 	animation: slideRight 0.4s;
-	@include respond("md") {
+	@include respond("lg") {
 		animation: none;
 	}
 }
 .animate-slideLeft {
 	animation: slideLeft 0.4s;
-	@include respond("md") {
+	@include respond("lg") {
 		animation: none;
 	}
 }

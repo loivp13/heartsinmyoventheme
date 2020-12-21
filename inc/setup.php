@@ -152,7 +152,7 @@ if (!function_exists('understrap_all_excerpts_get_more_link')) {
 		if (!is_admin()) {
 			$post_excerpt = $post_excerpt .
 				'<div class="container d-flex justify-content-end mb-3">
-					<a class="btn-read-more understrap-read-more-link text-tertiary" href="' . esc_url(get_permalink(get_the_ID())) . '">' .
+					<a class="btn-read-more understrap-read-more-link text-primary" href="' . esc_url(get_permalink(get_the_ID())) . '">' .
 				'READ MORE
 				<div class="btn-offset-highlight"></div>
 				'

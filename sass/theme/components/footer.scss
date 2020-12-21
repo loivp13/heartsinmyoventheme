@@ -1,3 +1,11 @@
+#infinite-footer {
+	bottom: -10rem;
+	& .container {
+		margin: 5rem 10rem;
+		border: none;
+		background-color: rgba(255, 255, 255, 0);
+	}
+}
 .footer {
 	&_arrow {
 		&_icon {

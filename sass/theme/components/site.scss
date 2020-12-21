@@ -26,3 +26,9 @@ a:hover {
 		padding: 0 10%;
 	}
 }
+
+.cat-links {
+	& a {
+		color: $tertiary;
+	}
+}

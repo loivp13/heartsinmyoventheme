@@ -62,7 +62,7 @@ if (!function_exists('understrap_entry_footer')) {
 			$categories_list = get_the_category_list(esc_html__(', ', 'understrap'));
 			if ($categories_list && understrap_categorized_blog()) {
 				/* translators: %s: Categories of current post */
-				printf('<span class="cat-links">' . esc_html__('Posted in %s', 'understrap') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf('<span class="cat-links text-secondary">' . esc_html__('Posted in %s', 'understrap') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list('', esc_html__(', ', 'understrap'));

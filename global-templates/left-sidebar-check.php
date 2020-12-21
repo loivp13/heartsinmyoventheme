@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Left sidebar check
  *
@@ -6,13 +7,13 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+$sidebar_pos = get_theme_mod('understrap_sidebar_position');
 
-if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) {
-	get_template_part( 'sidebar-templates/sidebar', 'left' );
+if ('left' === $sidebar_pos || 'both' === $sidebar_pos) {
+	get_template_part('sidebar-templates/sidebar', 'left');
 }
 ?>
 
-<div class="col-md content-area" id="primary">
+<div class="col-12 col-md-8 content-area" id="primary">

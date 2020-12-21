@@ -6,7 +6,7 @@
 				justify-content: center;
 				align-items: center;
 				display: none;
-				@include respond("md") {
+				@include respond("lg") {
 					display: flex;
 				}
 				& ul {

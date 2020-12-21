@@ -21,7 +21,7 @@ if (is_front_page()) {
 
 
 
-<div class="carousel-banner d-flex justify-content-center">
+<div class="carousel-banner d-flex justify-content-center mt-3">
     <div class="carousel-hero ">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-10 col-lg-9">

@@ -32,10 +32,10 @@ $container = get_theme_mod('understrap_container_type');
 
 	<?php do_action('wp_body_open'); ?>
 	<div id='page' class="header site bg-white ">
-		<div class="row no-md-gutters d-flex bg-white flex-wrap flex-sm-no-wrap justify-content-end justify-content-md-start align-items-end align-item-sm-center align-items-md-center mb-md-0">
+		<div class="row no-md-gutters d-flex bg-white flex-wrap flex-sm-no-wrap justify-content-end justify-content-lg-start align-items-end align-item-sm-center align-items-lg-center mb-md-0">
 
 			<!-- .site-navigation -->
-			<nav id="main-nav" class="col-2 col-md-6 navbar navbar-expand-md bg-white nav justify-content-md-around justify-content-lg-around  order-1 order-md-2" aria-labelledby="main-nav-label col-md-3">
+			<nav id="main-nav" class="col-2 col-lg-6 navbar navbar-expand-lg bg-white nav justify-content-md-around justify-content-lg-around  order-1 order-lg-2" aria-labelledby="main-nav-label col-md-3">
 
 				<div id="wrapper-navbar">
 
@@ -116,22 +116,35 @@ $container = get_theme_mod('understrap_container_type');
 								'theme_location'  => 'quinary'
 							)
 						);
+					} else {
+						wp_nav_menu(
+							array(
+								'container_class' => 'collapse navbar-collapse',
+								'container_id'    => 'navbarNavDropdown',
+								'menu_class'      => 'navbar-nav ml-auto',
+								'fallback_cb'     => '',
+								'menu_id'         => 'main-menu',
+								'depth'           => 2,
+								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+								'theme_location'  => 'primary'
+							)
+						);
 					}
 					?>
 
 			</nav>
 			<!-- LOGO -->
-			<div class="header-logo col-8 col-md-3 order-2 order-md-1">
+			<div class="header-logo col-8 col-lg-3 order-2 order-md-1">
 				<a href="<?php echo get_home_url(); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/favorites/Final.png" alt="">
 				</a>
 			</div>
 			<!-- Mobile Search Button -->
-			<button class="col-2 d-block d-md-none btn btn-icon btn-primary bg-white text-primary border-none btn-mobile order-3">
+			<button class="col-2 d-block d-lg-none btn btn-icon btn-primary bg-white text-primary border-none btn-mobile order-3">
 				<i class="fa fa-search"></i>
 			</button>
 			<!-- Search widget -->
-			<div class="header_widget justify-content-md-end col-12 col-md-3 col-lg-3 order-4 order-md-3 mt-2 animate-slideRight">
+			<div class="header_widget justify-content-md-end col-12 col-md-3 order-4 order-md-3 mt-2 animate-slideRight">
 				<?php dynamic_sidebar('navmenu') ?>
 			</div>
 

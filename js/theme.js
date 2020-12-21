@@ -7065,7 +7065,7 @@
     searchButton.click(e => {
       let windowSize = window.innerWidth;
 
-      if (windowSize < 768) {
+      if (windowSize < 992) {
         e.preventDefault();
         searchBar.toggle({
           start: function () {
@@ -7076,6 +7076,16 @@
           easing: 'linear'
         });
       }
-    }); //add border to the icon 
+    }); //add onScroll
+
+    let scrollTop; //elements
+
+    let topRecipesSidebar = $('.top-recipes-container');
+    let infinitefooter = $('.infinite-footer');
+    $(window).scroll(e => {
+      if (scrollTop < 100) {
+        infinitefooter.css('display', 'none');
+      }
+    });
   })();
 })(jQuery);

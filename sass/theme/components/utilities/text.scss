@@ -5,6 +5,9 @@
 			color: $light-dark;
 		}
 	}
+	&-secondary {
+		color: $secondary;
+	}
 	&-primary {
 		color: $primary;
 		&::placeholder {

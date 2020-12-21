@@ -63,7 +63,6 @@ function set_post_view()
 	$key = 'post_views_count';
 	$post_id = get_the_id();
 	$count = get_post_meta($post_id, $key, true);
-	echo $count;
 	$count++;
 	update_post_meta($post_id, $key, $count);
 }
@@ -80,3 +79,33 @@ function posts_custom_column_views($column)
 }
 add_filter('manage_posts_columns', 'posts_column_views');
 add_action('manage_posts_custom_column', 'posts_custom_column_views');
+
+
+//  Custom Infinite Footer for Jetpack Infinite Scroll.
+
+function my_custom_infinite_footer()
+{
+?>
+	<div id="infinite-footer">
+		<div class="container d-flex justify-content-end">
+			<div class="col-2 d-flex flex-column align-items-center">
+				<div class=" col-12 blog-credits-title text-center">BACK TO TOP</div>
+				<img class="col-6" src="<?php echo get_template_directory_uri() ?>/img/back_to_top-green.png" alt="">
+			</div>
+		</div>
+	</div>
+<?php
+}
+
+/**
+ * Custom Filter to replace the JetPack Infinite Scroll Footer
+ **/
+function my_infinite_scroll_settings($args)
+{
+	if (is_array($args))
+		$args['footer_callback'] = 'my_custom_infinite_footer';
+	return $args;
+}
+add_filter('infinite_scroll_settings', 'my_infinite_scroll_settings');
+
+//
