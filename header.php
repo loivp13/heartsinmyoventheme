@@ -24,6 +24,8 @@ $container = get_theme_mod('understrap_container_type');
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,600&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 	<link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
@@ -31,11 +33,11 @@ $container = get_theme_mod('understrap_container_type');
 
 
 	<?php do_action('wp_body_open'); ?>
-	<div id='page' class="header site bg-white ">
+	<div id='page' class="header site bg-white">
 		<div class="row no-md-gutters d-flex bg-white flex-wrap flex-sm-no-wrap justify-content-end justify-content-lg-start align-items-end align-item-sm-center align-items-lg-center mb-md-0">
 
 			<!-- .site-navigation -->
-			<nav id="main-nav" class="col-2 col-lg-6 navbar navbar-expand-lg bg-white nav justify-content-md-around justify-content-lg-around  order-1 order-lg-2" aria-labelledby="main-nav-label col-md-3">
+			<nav id="main-nav" class="col-2 col-xl-6 navbar navbar-expand-xl bg-white nav justify-content-md-around justify-content-xl-center  order-1 order-xl-2" aria-labelledby="main-nav-label col-md-3">
 
 				<div id="wrapper-navbar">
 
@@ -56,7 +58,7 @@ $container = get_theme_mod('understrap_container_type');
 							array(
 								'container_class' => 'collapse navbar-collapse',
 								'container_id'    => 'navbarNavDropdown',
-								'menu_class'      => 'navbar-nav ml-auto',
+								'menu_class'      => 'navbar-nav ml-auto mr-auto',
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'depth'           => 2,
@@ -69,7 +71,7 @@ $container = get_theme_mod('understrap_container_type');
 							array(
 								'container_class' => 'collapse navbar-collapse',
 								'container_id'    => 'navbarNavDropdown',
-								'menu_class'      => 'navbar-nav ml-auto',
+								'menu_class'      => 'navbar-nav ml-auto mr-auto',
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'depth'           => 2,
@@ -77,12 +79,12 @@ $container = get_theme_mod('understrap_container_type');
 								'theme_location'  => 'secondary'
 							)
 						);
-					} else if (is_page(334)) {
+					} else if (is_page(7)) {
 						wp_nav_menu(
 							array(
 								'container_class' => 'collapse navbar-collapse',
 								'container_id'    => 'navbarNavDropdown',
-								'menu_class'      => 'navbar-nav ml-auto',
+								'menu_class'      => 'navbar-nav ml-auto mr-auto',
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'depth'           => 2,
@@ -90,12 +92,12 @@ $container = get_theme_mod('understrap_container_type');
 								'theme_location'  => 'tertiary'
 							)
 						);
-					} else if (is_page(336)) {
+					} else if (is_page(11)) {
 						wp_nav_menu(
 							array(
 								'container_class' => 'collapse navbar-collapse',
 								'container_id'    => 'navbarNavDropdown',
-								'menu_class'      => 'navbar-nav ml-auto',
+								'menu_class'      => 'navbar-nav ml-auto mr-auto',
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'depth'           => 2,
@@ -103,12 +105,12 @@ $container = get_theme_mod('understrap_container_type');
 								'theme_location'  => 'quaternary'
 							)
 						);
-					} else if (is_page(338)) {
+					} else if (is_page(333)) {
 						wp_nav_menu(
 							array(
 								'container_class' => 'collapse navbar-collapse',
 								'container_id'    => 'navbarNavDropdown',
-								'menu_class'      => 'navbar-nav ml-auto',
+								'menu_class'      => 'navbar-nav ml-auto mr-auto',
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'depth'           => 2,
@@ -121,7 +123,7 @@ $container = get_theme_mod('understrap_container_type');
 							array(
 								'container_class' => 'collapse navbar-collapse',
 								'container_id'    => 'navbarNavDropdown',
-								'menu_class'      => 'navbar-nav ml-auto',
+								'menu_class'      => 'navbar-nav ml-auto mr-auto',
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'depth'           => 2,
@@ -134,13 +136,13 @@ $container = get_theme_mod('understrap_container_type');
 
 			</nav>
 			<!-- LOGO -->
-			<div class="header-logo col-8 col-lg-3 order-2 order-md-1">
+			<div class="header-logo d-flex justify-content-center col-8 col-xl-3 order-2 order-xl-1">
 				<a href="<?php echo get_home_url(); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/favorites/Final.png" alt="">
 				</a>
 			</div>
 			<!-- Mobile Search Button -->
-			<button class="col-2 d-block d-lg-none btn btn-icon btn-primary bg-white text-primary border-none btn-mobile order-3">
+			<button class="col-2 d-block d-xl-none btn btn-icon btn-primary bg-white text-primary border-none btn-mobile order-3">
 				<i class="fa fa-search"></i>
 			</button>
 			<!-- Search widget -->
@@ -149,4 +151,3 @@ $container = get_theme_mod('understrap_container_type');
 			</div>
 
 		</div>
-	</div>

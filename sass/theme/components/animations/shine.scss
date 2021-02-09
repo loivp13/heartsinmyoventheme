@@ -1,0 +1,29 @@
+.onHoverShineAnimation {
+	position: relative;
+	overflow: hidden;
+	&-right {
+		&::after {
+			content: "";
+			top: 0;
+			right: 0;
+			width: 400%;
+			height: 500%;
+			position: absolute;
+			transform: translate(100%, -100%) rotate(-45deg);
+			background-color: rgba(255, 255, 255, 0.575);
+		}
+	}
+	&-left {
+		&::after {
+			content: "";
+			transition: all ease 1.2s;
+			top: 0;
+			right: 0;
+			width: 400%;
+			height: 500%;
+			position: absolute;
+			transform: translate(-100%, 100%) rotate(-45deg);
+			background-color: rgba(255, 255, 255, 0.575);
+		}
+	}
+}

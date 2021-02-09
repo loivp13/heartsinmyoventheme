@@ -20,10 +20,15 @@ $light: #e9e2dc;
 
 $font: "LemonMilkLight";
 $font-nami: "Tangerine";
-$font-monts: "Montseratt";
+$font-monts: "Montserrat";
 
 body {
 	// padding: %;
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+* {
 }
 
 @import "./mixins/mixins";
@@ -35,14 +40,19 @@ body {
 @import "./components/comments";
 @import "./components/entry";
 @import "./components/header";
+@import "./components/heading";
 @import "./components/hr";
 @import "./components/icons";
 @import "./components/jetpack";
 @import "./components/footer";
 @import "./components/logo";
 @import "./components/nav";
+@import "./components/pinterest";
+@import "./components/single_recipe";
 @import "./components/search";
+@import "./components/searchRecipes";
 @import "./components/site";
 @import "./components/top-recipes";
+@import "./components/wpc7";
 
 @import "./components/utilities/main";

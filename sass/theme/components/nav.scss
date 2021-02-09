@@ -1,18 +1,27 @@
 #navbarNavDropdown {
 	position: absolute;
-	background-color: rgba(255, 255, 255, 0.938);
+	background-color: white;
 	padding: 1rem;
 	border: 2px;
 	width: 100vw;
 	left: -7vw;
+	z-index: 2000;
 	@include respond("sm") {
 		position: absolute;
 		left: -3vw;
 	}
 	@include respond("md") {
+		width: 100vw;
+	}
+	@include respond("lg") {
+		// height: 50%;
+		width: 100vw;
+		left: -7vw;
+		top: 191%;
+	}
+	@include respond("xl") {
 		position: initial;
 		left: initial;
-		width: initial;
 		// height: 50%;
 	}
 }
@@ -47,31 +56,29 @@
 }
 
 .navbar-toggler {
+	@include respond("sm") {
+		font-size: 2rem;
+	}
 }
 
 .nav-link {
-	padding: 1rem;
 	color: $light-dark;
 	font-size: 20px;
 	text-transform: uppercase;
-	margin-right: 10px;
 	letter-spacing: 3px;
-	border-bottom: 1px solid $secondary;
+	text-align: center;
+
 	@include respond("sm") {
 		font-size: 18px;
-		padding-right: 0 !important;
-		padding-left: 0 !important;
 	}
 	@include respond("md") {
 		font-size: 16px;
-		border-bottom: none;
 	}
 	@include respond("lg") {
 		font-size: 16px;
-		padding-right: 0 !important;
-		padding-left: 0 !important;
 	}
 	@include respond("xl") {
+		border-bottom: none;
 		font-size: 20px;
 	}
 }

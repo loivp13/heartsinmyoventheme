@@ -9,6 +9,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
+
 // UnderStrap's includes directory.
 $understrap_inc_dir = get_template_directory() . '/inc';
 
@@ -27,6 +28,7 @@ $understrap_includes = array(
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/understrap/understrap/issues/567.
 	'/editor.php',                          // Load Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
+	'/search-recipes.php'					// Load custom search for recipes
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
@@ -56,6 +58,9 @@ register_nav_menus(array(
 function get_post_counts()
 {
 	$count = get_post_meta(get_the_id(), 'post_views_count', true);
+     echo $count;
+	
+	
 	return "$count views";
 }
 function set_post_view()
@@ -63,7 +68,7 @@ function set_post_view()
 	$key = 'post_views_count';
 	$post_id = get_the_id();
 	$count = get_post_meta($post_id, $key, true);
-	$count++;
+	$count += 1;
 	update_post_meta($post_id, $key, $count);
 }
 function posts_column_views($columns)
@@ -106,6 +111,19 @@ function my_infinite_scroll_settings($args)
 		$args['footer_callback'] = 'my_custom_infinite_footer';
 	return $args;
 }
+
+
+
 add_filter('infinite_scroll_settings', 'my_infinite_scroll_settings');
 
-//
+
+
+//RECIPES SEARCH AJAX
+
+add_action('wp_head', 'wp97797_define_ajaxurl');
+function wp97797_define_ajaxurl()
+{ ?>
+	<script type="text/javascript">
+		let ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+	</script>
+<?php }

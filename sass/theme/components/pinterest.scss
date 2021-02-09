@@ -1,0 +1,10 @@
+.pinterest {
+	&-widget {
+		&-container {
+			& > span {
+				width: 100% !important;
+				border: none !important;
+			}
+		}
+	}
+}

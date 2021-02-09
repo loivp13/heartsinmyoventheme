@@ -23,7 +23,7 @@
 	}
 	&-img {
 		&-top {
-			height: 100vw !important;
+			height: 40vw !important;
 			object-fit: cover;
 			width: 100% !important;
 			@include respond("md") {
@@ -148,6 +148,7 @@
 		// transform: translateY(-10%);
 		// display: flex;
 		// justify-content: center;
+
 		&-img {
 			height: auto;
 			width: auto;

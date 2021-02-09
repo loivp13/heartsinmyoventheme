@@ -1,0 +1,144 @@
+.print {
+	&-container {
+		margin-top: 2rem;
+		border: 1px solid $light;
+	}
+	&-header {
+		&-box {
+			background-color: $light;
+			position: relative;
+			border: 1px solid $light;
+			& > * {
+				font-family: $font-monts !important;
+				font-style: normal;
+				& > * {
+					font-family: $font-monts !important;
+					font-style: normal;
+					& > * {
+						font-family: $font-monts !important;
+						font-style: normal;
+					}
+				}
+			}
+			&-left {
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				max-width: 150px;
+				max-height: 150px;
+				overflow: hidden;
+				padding: 0;
+				& > img {
+					height: auto;
+					min-width: 150%;
+				}
+			}
+			&-right {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 1rem;
+				background-color: $light;
+
+				& > * {
+					font-family: $font-monts !important;
+					background-color: $light !important;
+
+					& > * {
+						font-family: $font-monts !important;
+						background-color: $light !important;
+
+						& > * {
+							font-family: $font-monts !important;
+							background-color: $light;
+							& > * {
+								font-family: $font-monts !important;
+								background-color: $light;
+
+								& > * {
+									font-family: $font-monts !important;
+									background-color: $light;
+								}
+							}
+						}
+					}
+				}
+				& > div:first-child() {
+					text-align: center;
+					& > span {
+						font-family: $font-monts !important;
+						font-weight: bold;
+					}
+				}
+				& > div:nth-child(2) {
+					& > i:nth-of-type(2) {
+						display: block;
+						width: 100%;
+					}
+				}
+				& > h2 {
+					align-self: center;
+					& > span {
+						font-size: 1.4rem !important;
+					}
+				}
+			}
+		}
+	}
+	&-button {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
+		font-size: 1.3rem;
+		background-color: $primary;
+		text-transform: capitalize;
+		font-family: $font-monts;
+		padding: 8px 16px;
+		color: white;
+	}
+	&-ingredients {
+		&-box {
+			& > * {
+				font-family: $font-monts !important;
+				font-style: normal;
+				& > * {
+					font-family: $font-monts !important;
+					font-style: normal;
+
+					& > * {
+						font-family: $font-monts !important;
+						font-style: normal;
+
+						& > * {
+							font-family: $font-monts !important;
+							font-style: normal;
+						}
+					}
+				}
+			}
+		}
+	}
+	&-directions {
+		&-box {
+			& > * {
+				font-family: $font-monts !important;
+				font-style: normal;
+				& > * {
+					font-family: $font-monts !important;
+					font-style: normal;
+
+					& > * {
+						font-family: $font-monts !important;
+						font-style: normal;
+
+						& > * {
+							font-family: $font-monts !important;
+							font-style: normal;
+						}
+					}
+				}
+			}
+		}
+	}
+}

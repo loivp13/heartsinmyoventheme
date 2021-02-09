@@ -20,8 +20,9 @@ $query = new WP_Query($arg);
 
 
 ?>
-<div class="top-recipes-header">
-    TOP RECIPES
+<div class="top-recipes-header text-light-dark">
+    RECENTLY POPULAR
+
 </div>
 <div class="row no-gutters d-flex">
     <?php
@@ -39,7 +40,7 @@ $query = new WP_Query($arg);
         while ($query->have_posts()) {
             $query->the_post();
     ?>
-            <div class="col-md-6 top-recipes-item p-1">
+            <div class="col-md-4 top-recipes-item p-1">
                 <a href="<?php echo get_permalink(get_the_id()); ?>">
                     <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'thumbnail', false, array('class' => 'carousel-item-img top-recipes-img')); ?>
                     <div class="card-body p-0">

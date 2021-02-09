@@ -76,7 +76,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) {
 			return;
 		}
 		?>
-		<nav class="container navigation post-navigation">
+		<nav class="container navigation post-navigation d-none">
 			<h2 class="sr-only"><?php esc_html_e( 'Post navigation', 'understrap' ); ?></h2>
 			<div class="row nav-links justify-content-between">
 				<?php

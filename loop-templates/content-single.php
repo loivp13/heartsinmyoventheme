@@ -12,7 +12,7 @@ defined('ABSPATH') || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<header class="entry-header print-none">
 
 		<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
@@ -25,14 +25,14 @@ defined('ABSPATH') || exit;
 	</header><!-- .entry-header -->
 
 
-	<div class="entry-content">
+	<div class="entry-content" id='entry-content-print'>
 
 		<?php the_content(); ?>
 
 		<?php
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __('Pages:', 'understrap'),
+				'before' => '<div class="page-links print-none>' . __('Pages:', 'understrap'),
 				'after'  => '</div>',
 			)
 		);
@@ -40,7 +40,7 @@ defined('ABSPATH') || exit;
 
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer print-none">
 
 		<?php understrap_entry_footer(); ?>
 

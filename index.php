@@ -29,7 +29,6 @@ $container = get_theme_mod('understrap_container_type');
 
 		<div class="row">
 			<!-- <?php get_template_part('global-templates/left-sidebar-check'); ?> -->
-
 			<main class="site-main col-12 col-md-8" id="main">
 
 				<?php
@@ -52,7 +51,9 @@ $container = get_theme_mod('understrap_container_type');
 
 			</main><!-- #main -->
 			<div class="col-0 col-md-4 p-0 top-recipes-container">
-				<?php get_template_part('./global-templates/top-recipes') ?>
+				<?php get_template_part('./global-templates/recently-popular') ?>
+				<?php get_template_part('./global-templates/pinterest-widget') ?>
+
 			</div>
 
 

@@ -21,10 +21,10 @@ if (is_front_page()) {
 
 
 
-<div class="carousel-banner d-flex justify-content-center mt-3">
+<div class="carousel-banner container d-flex justify-content-center mt-3">
     <div class="carousel-hero ">
         <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-10 col-lg-9">
+            <div class="col-12 ">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -108,8 +108,7 @@ if (is_front_page()) {
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="row">
-                                <div class="card-group row">
+                                <div class="card-group d-flex">
                                     <?php
 
                                     // The Query
@@ -125,7 +124,7 @@ if (is_front_page()) {
                                         while ($query->have_posts()) {
                                             $query->the_post();
                                     ?>
-                                            <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0
+                                            <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0  onHoverShineAnimation onHoverShineAnimation-right
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
@@ -152,7 +151,6 @@ if (is_front_page()) {
 
                                 </div>
 
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row">
@@ -172,7 +170,7 @@ if (is_front_page()) {
                                     while ($query->have_posts()) {
                                         $query->the_post();
                                 ?>
-                                        <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0
+                                        <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0  onHoverShineAnimation onHoverShineAnimation-right
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
@@ -231,7 +229,7 @@ if (is_front_page()) {
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="row">
+                            <div class="d-flex">
                                 <?php
 
                                 // The Query
@@ -247,7 +245,7 @@ if (is_front_page()) {
                                     while ($query->have_posts()) {
                                         $query->the_post();
                                 ?>
-                                        <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0
+                                        <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0  onHoverShineAnimation onHoverShineAnimation-right
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
@@ -295,7 +293,7 @@ if (is_front_page()) {
                                     while ($query->have_posts()) {
                                         $query->the_post();
                                 ?>
-                                        <div class="col-6 col-md-4 col-lg-3 card mb-0 p-1
+                                        <div class="col-6 col-md-4 col-lg-3 card mb-0 p-1  onHoverShineAnimation onHoverShineAnimation-right
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
@@ -346,14 +344,14 @@ if (is_front_page()) {
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div id="carousel-reader-favorites" class="carousel slide" data-ride="carousel">
+            <div id="carousel-reader-popular" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carousel-reader-favorites" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-reader-favorites" data-slide-to="1"></li>
+                    <li data-target="#carousel-reader-popular" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-reader-popular" data-slide-to="1"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="row">
+                        <div class="d-flex">
                             <?php
 
                             // The Query
@@ -369,7 +367,7 @@ if (is_front_page()) {
                                 while ($query->have_posts()) {
                                     $query->the_post();
                             ?>
-                                    <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0
+                                    <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0  onHoverShineAnimation onHoverShineAnimation-right
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
@@ -417,14 +415,14 @@ if (is_front_page()) {
                                 while ($query->have_posts()) {
                                     $query->the_post();
                             ?>
-                                    <div class="col-6 col-md-4 col-lg-3 card mb-0 p-1
+                                    <div class="col-6 col-md-4 col-lg-3 card mb-0 p-1  onHoverShineAnimation onHoverShineAnimation-right
                                                 <?php
                                                 echo $query->current_post === 2 ? 'd-none d-md-block' : '';
                                                 echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
                                                 ?>">
 
                                         <a href="<?php echo get_permalink(get_the_id()); ?>">
-                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
+                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img   card-img-top ')); ?>
                                             <div class="card-body">
                                                 <h4><?php
                                                     echo wp_trim_words(get_the_title(), 5);
@@ -446,11 +444,11 @@ if (is_front_page()) {
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carousel-reader-favorites" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carousel-reader-popular" role="button" data-slide="prev">
                     <i class="fa fa-chevron-left"></i>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carousel-reader-favorites" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carousel-reader-popular" role="button" data-slide="next">
                     <i class="fa fa-chevron-right"></i>
 
                     <span class="sr-only">Next</span>
@@ -460,8 +458,9 @@ if (is_front_page()) {
         </div>
     </div>
 </div>
+
+<?php
+get_footer(); ?>
 </div>
 
 
-<?php
-get_footer();

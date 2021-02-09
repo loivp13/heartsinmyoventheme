@@ -40,9 +40,14 @@ get_post_counts();
 				?>
 
 			</main><!-- #main -->
+			<?php get_template_part('global-templates/right-sidebar-check'); ?>
+			<div class="col-0 col-md-4 p-0 top-recipes-container  print-none">
+				<?php get_template_part('./global-templates/recently-popular') ?>
+
+				<?php get_template_part('./global-templates/pinterest-widget') ?>
+			</div>
 
 			<!-- Do the right sidebar check -->
-			<?php get_template_part('global-templates/right-sidebar-check'); ?>
 
 		</div><!-- .row -->
 

@@ -1,0 +1,36 @@
+.form-control {
+	&:focus {
+		border: 1px solid $primary;
+	}
+}
+.wpcf7 {
+	@include respond("lg") {
+		max-width: 80% !important;
+	}
+}
+
+.wp-block-contact-form-7-contact-form-selector {
+	width: 100%;
+}
+.wpcf7-form-control {
+	background-color: $primary;
+	&:focus {
+		border: 1px solid $primary;
+	}
+}
+.wpcf7 input:not(:disabled):not(.disabled):active[type="submit"] {
+	background-color: white;
+}
+
+.wpcf7 form.failed .wpcf7-response-output {
+	border-color: white;
+	color: red;
+	font-weight: bold;
+}
+.wp7-label {
+	font-family: $font;
+	@include respond("lg") {
+		font-size: 1rem;
+		font-weight: bold;
+	}
+}

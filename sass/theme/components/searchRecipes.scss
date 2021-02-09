@@ -1,0 +1,148 @@
+#searchRecipes {
+	@include respond("md") {
+		& > * {
+			display: block !important;
+		}
+	}
+	& > .row {
+		& > div {
+			& > fieldset {
+				& > * {
+					font-size: 0.8rem;
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+}
+
+#recipes {
+	&-order {
+	}
+	&-order-by {
+	}
+}
+
+.searchRecipes {
+	&-orderby {
+		padding: 0.2rem;
+		border: none;
+		color: $primary;
+		font-size: 1rem;
+		background-color: white;
+		&-box {
+			display: flex;
+		}
+	}
+}
+.browse {
+	&-filter {
+		padding: 1rem;
+		&-open {
+			display: block;
+		}
+		&-close {
+			display: none;
+		}
+	}
+	&-title {
+		background-color: $light;
+		padding: 0.4rem 1rem;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.search {
+	&-input {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row-reverse;
+		& > * {
+			color: $primary;
+			font-size: 1rem;
+		}
+	}
+	&-filter {
+		&-button {
+			border: 1px solid $primary;
+			color: $primary;
+			padding: 0.5rem;
+			margin: 1rem;
+		}
+	}
+	&-recipes {
+		padding: 0 0%;
+		&-heading {
+			background-color: $light;
+			text-align: center;
+			padding: 0.8rem;
+			letter-spacing: 0.2rem;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 1.2rem;
+			@include respond("md") {
+				padding: 0.5rem;
+			}
+		}
+	}
+	&-results {
+		& > div {
+			font-family: $font;
+			& > img {
+				width: 100%;
+			}
+		}
+		&-image {
+			& > img {
+				width: 100%;
+			}
+			& + div {
+				font-size: 0.7rem;
+				@include respond("sm") {
+					font-size: 0.8rem;
+				}
+				@include respond("lg") {
+					font-size: 1rem;
+				}
+			}
+		}
+		&-page {
+			margin: 0.1rem;
+			@include respond("sm") {
+				margin: 0.5rem;
+			}
+			&-num {
+				color: $light-dark;
+			}
+		}
+		&-pagination {
+			margin-top: 2rem;
+		}
+		&-current-page {
+			& > a {
+				color: $primary;
+			}
+		}
+
+		&-first {
+			border: 1px solid $primary;
+			padding: 0.3rem;
+			margin-left: 0.5rem;
+			white-space: nowrap;
+		}
+		&-last {
+			border: 1px solid $primary;
+			word-spacing: nowrap;
+			padding: 0.3rem;
+			margin-left: 0.5rem;
+			white-space: nowrap;
+		}
+	}
+	&-section {
+		overflow: hidden;
+	}
+}

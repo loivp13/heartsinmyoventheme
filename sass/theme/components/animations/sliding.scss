@@ -11,6 +11,12 @@
 	}
 }
 
+.animate-slideUp {
+	animation: slideUp 0.3s;
+}
+.animate-slideDown {
+	animation: slideDown 0.3s;
+}
 @keyframes slideLeft {
 	0% {
 		transform: translatex(200%);
@@ -25,5 +31,23 @@
 	}
 	100% {
 		transform: translatex(200%);
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(200%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(200%);
 	}
 }
