@@ -349,101 +349,17 @@ if (is_front_page()) {
                     <li data-target="#carousel-reader-popular" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-reader-popular" data-slide-to="1"></li>
                 </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="d-flex">
-                            <?php
-
-                            // The Query
-                            $arg = array(
-                                'meta_key' => "post_views_count",
-                                'posts_per_page' => 4,
-                                'orderby' => 'meta_value_num'
-                            );
-                            $query = new WP_Query($arg);
-
-                            // The Loop
-                            if ($query->have_posts()) {
-                                while ($query->have_posts()) {
-                                    $query->the_post();
-                            ?>
-                                    <div class="col-6 col-md-4 col-lg-3 card p-1 mb-0  onHoverShineAnimation onHoverShineAnimation-right
-                                                <?php
-                                                echo $query->current_post === 2 ? 'd-none d-md-block' : '';
-                                                echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
-                                                ?>">
-
-
-                                        <a href="<?php echo get_permalink(get_the_id()); ?>">
-                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
-                                            <div class="card-body">
-                                                <h4><?php
-                                                    the_title();
-                                                    ?></h4>
-                                            </div>
-                                        </a>
-
-                                    </div>
-
-                            <?php }
-                            } else {
-                                // no posts found
-                            }
-                            /* Restore original Post Data */
-                            wp_reset_postdata();
-
-                            ?>
-
-
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <?php
-
-                            // The Query
-                            $arg = array(
-                                'category_name'  => 'favorites',
-                                'posts_per_page' => 4,
-                                'order'          => 'date',
-                                'offset'         => 4
-                            );
-                            $query = new WP_Query($arg);
-
-                            // The Loop
-                            if ($query->have_posts()) {
-                                while ($query->have_posts()) {
-                                    $query->the_post();
-                            ?>
-                                    <div class="col-6 col-md-4 col-lg-3 card mb-0 p-1  onHoverShineAnimation onHoverShineAnimation-right
-                                                <?php
-                                                echo $query->current_post === 2 ? 'd-none d-md-block' : '';
-                                                echo $query->current_post === 3 ? 'd-none d-md-none d-lg-block' : '';
-                                                ?>">
-
-                                        <a href="<?php echo get_permalink(get_the_id()); ?>">
-                                            <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img   card-img-top ')); ?>
-                                            <div class="card-body">
-                                                <h4><?php
-                                                    echo wp_trim_words(get_the_title(), 5);
-                                                    ?></h4>
-                                            </div>
-                                        </a>
-
-                                    </div>
-
-                            <?php }
-                            } else {
-                                // no posts found
-                            }
-                            /* Restore original Post Data */
-                            wp_reset_postdata();
-
-                            ?>
-
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                if ( function_exists('wpp_get_mostpopular') ) {
+                                    /* Get up to the top 5 commented posts from the last 7 days */
+                                     wpp_get_mostpopular(array(
+                                        'limit' => 8,
+                                        'range' => 'last7days',
+                                        'stats_views' => 0
+                                    ));
+                                }
+                ?>
+                
                 <a class="carousel-control-prev" href="#carousel-reader-popular" role="button" data-slide="prev">
                     <i class="fa fa-chevron-left"></i>
                     <span class="sr-only">Previous</span>
