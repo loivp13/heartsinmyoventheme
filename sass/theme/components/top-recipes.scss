@@ -1,6 +1,15 @@
 .top {
 	&-recipes {
 		&-item {
+			& > a {
+				& > div {
+					color: $tertiary;
+					text-align: center;
+				}
+				&:hover > div {
+					color: $onhovertext;
+				}
+			}
 		}
 		&-header {
 			font-family: $font;

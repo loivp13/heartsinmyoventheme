@@ -576,7 +576,13 @@
 			};
 		}
 
-		//ADD SHRINE ANIMATION
+		//PRINT BUTTON
+		let printButton = document.querySelector(".print-button");
+		if (printButton) {
+			printButton.addEventListener("click", function () {
+				window.print();
+			});
+		}
 	})();
 })(jQuery);
 function addShineAnimation() {

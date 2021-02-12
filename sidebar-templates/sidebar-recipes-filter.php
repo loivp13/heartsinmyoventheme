@@ -2,16 +2,20 @@
     <form id='searchRecipes' data-css-form="filter" data-js-form="filter">
         <h2 data-css-form="title" class=" search-recipes-heading text-light-dark">Search Recipes</h2>
         <div class="searchRecipes-orderby-box w-100 flex-column align-items-start">
-            <label class='font-weight-bold text-primary' data-css-form="label" for="recipes-order-by">Order by</label>
+            <label class='searchRecipes-orderby-label-title text-primary' data-css-form="label" >Order by</label>
             <fieldset class='d-flex flex-column col-12 pl-2' data-css-form="group">
-                <select class="searchRecipes-orderby" data-css-form="input select" id="recipes-order-by" name="recipes-order-by">
-                    <option value="date">Date Posted</option>
-                    <option value="meta_value">Popularity</option>
-                </select>
-                <select class="searchRecipes-orderby" data-css-form="input select" id="recipes-order" name="recipes-order">
-                    <option value="DESC">Newest to Old</option>
-                    <option value="ASC">Oldest to New</option>
-                </select>
+                <label class='searchRecipes-orderby-label recipe-label-1' for="recipes-order-by">
+                    <select class="searchRecipes-orderby" data-css-form="input select" id="recipes-order-by" name="recipes-order-by">
+                        <option value="date">Date Posted</option>
+                        <option value="meta_value">Popularity</option>
+                    </select>
+                </label>
+                <label class='searchRecipes-orderby-label recipe-label-2'for="recipes-order" >
+                    <select class="searchRecipes-orderby" data-css-form="input select" id="recipes-order" name="recipes-order">
+                        <option value="DESC">Newest to Old</option>
+                        <option value="ASC">Oldest to New</option>
+                    </select>
+                </label>
             </fieldset>
         </div>
         <div class="row w-100 no-gutters">

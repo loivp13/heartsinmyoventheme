@@ -1,12 +1,22 @@
 #searchform {
-	width: 40%;
+	width: auto;
+
 	@include respond("md") {
-		width: auto;
 	}
 }
 #s {
+	color: $dark;
+
 	&:focus {
 		border-color: $primary !important;
+		& + span {
+			& > button {
+				border-color: #e0a3ab !important;
+			}
+		}
+	}
+	&:hover {
+		color: $dark;
 	}
 	& + span {
 		& > button {

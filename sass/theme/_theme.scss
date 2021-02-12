@@ -9,7 +9,7 @@
 	font-weight: regular;
 	src: url("../fonts/LEMONMILK-Regular.woff") format("opentype");
 }
-
+$onhovertext: #cd6a77;
 $primary: #e0a3ab;
 $secondary: #e2d1c7;
 $tertiary: #aad1be;
@@ -28,16 +28,24 @@ body {
 	margin: 0 auto;
 }
 
-* {
+a {
+	color: $tertiary !important;
+	&:hover {
+		color: $onhovertext !important;
+		text-decoration: none;
+		cursor: pointer;
+	}
 }
 
 @import "./mixins/mixins";
 @import "./components/animations/main";
 
+@import "./components/blog";
 @import "./components/btn";
 @import "./components/card";
 @import "./components/carousel";
 @import "./components/comments";
+@import "./components/contact";
 @import "./components/entry";
 @import "./components/header";
 @import "./components/heading";

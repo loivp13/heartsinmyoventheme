@@ -46,10 +46,15 @@ function recipe_search()
         'paged' => $paged
 
     );
+    if($recipes_order_by === 'meta_value'){
+        $args['orderby'] = 'meta_value_num';
+        $args['meta_key'] = 'post_views_count';
+
+    }
+
     $query = new WP_Query($args);
     $max_pages = ($query->max_num_pages);
     $max_pages = intval($max_pages);
-
 
 
 

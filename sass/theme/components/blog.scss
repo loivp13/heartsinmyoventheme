@@ -1,0 +1,6 @@
+#main {
+	& > * {
+		font-family: $font-monts;
+		color: $light-dark;
+	}
+}

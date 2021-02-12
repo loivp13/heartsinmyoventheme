@@ -15,14 +15,29 @@
 	}
 	&-primary {
 		&-reg {
-			border: 1px solid $primary;
+			border: 1px solid $tertiary;
 			box-sizing: border-box;
 			border-radius: 1px;
+			&:hover {
+				border-color: $primary;
+			}
 		}
 	}
 	&-tertiary {
 		&-reg {
 			border: 1px solid $tertiary;
+		}
+	}
+}
+
+.input-group:hover {
+	.border {
+		&-primary {
+			&-reg {
+				border-color: $primary;
+				cursor: pointer;
+				color: $primary;
+			}
 		}
 	}
 }

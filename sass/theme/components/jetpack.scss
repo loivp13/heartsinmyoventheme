@@ -6,7 +6,7 @@
 				justify-content: center;
 				align-items: center;
 				display: none;
-				@include respond("lg") {
+				@include respond("xl") {
 					display: flex;
 				}
 				& ul {
@@ -22,6 +22,9 @@
 							color: $tertiary;
 							height: 20px !important;
 							width: 20px !important;
+							&:hover {
+								color: $onhovertext;
+							}
 						}
 					}
 				}

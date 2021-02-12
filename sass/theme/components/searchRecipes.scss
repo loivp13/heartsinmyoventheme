@@ -27,17 +27,40 @@
 	&-orderby {
 		padding: 0.2rem;
 		border: none;
-		color: $primary;
+		color: $tertiary;
 		font-size: 1rem;
 		background-color: white;
+		// display: none;
+		// appearance: none;
+		width: 100%;
+		&-label {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			// &:after {
+			// 	transform: rotate(180deg);
+			// 	font-size: 20px;
+			// 	content: "^";
+			// 	color: $tertiary;
+			// 	right: 0;
+			// 	text-align: center;
+			// }
+			&-title {
+				font-family: $font-monts;
+			}
+		}
 		&-box {
 			display: flex;
+			& > fieldset {
+				position: relative;
+			}
 		}
 	}
 }
 .browse {
 	&-filter {
-		padding: 1rem;
+		padding: 0.5rem;
 		&-open {
 			display: block;
 		}
@@ -62,12 +85,40 @@
 		align-items: center;
 		flex-direction: row-reverse;
 		& > * {
-			color: $primary;
+			color: $tertiary;
 			font-size: 1rem;
+		}
+		& > input[type="checkbox"] {
+			display: none;
+			& + label:after {
+				border: 1px solid $tertiary;
+				margin-left: auto;
+				content: "\00a0";
+				display: inline-block;
+				font: 16px/1em sans-serif;
+				height: 16px;
+				margin: 0 0.25em 0 0;
+				padding: 0;
+				width: 16px;
+			}
+			&:checked + label:after {
+				content: "\2713";
+				background-color: $primary;
+				border: 1px solid $primary;
+				color: white;
+				text-align: center;
+			}
+		}
+		& > label {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 	}
 	&-filter {
 		&-button {
+			display: none;
 			border: 1px solid $primary;
 			color: $primary;
 			padding: 0.5rem;
@@ -84,6 +135,7 @@
 			text-transform: uppercase;
 			font-weight: 400;
 			font-size: 1.2rem;
+			font-family: $font-monts;
 			@include respond("md") {
 				padding: 0.5rem;
 			}
@@ -102,6 +154,9 @@
 			}
 			& + div {
 				font-size: 0.7rem;
+				margin-bottom: 1rem;
+				margin-top: 0.25rem;
+				text-align: center;
 				@include respond("sm") {
 					font-size: 0.8rem;
 				}

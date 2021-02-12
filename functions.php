@@ -228,7 +228,7 @@ function my_custom_popular_posts_html_list($popular_posts, $instance){
 			$string .= "<a href='" . get_permalink($posts->id) . "'>";
 			$string .= wp_get_attachment_image(get_post_thumbnail_id(($posts->id)), 'large', false, array('class' => 'carousel-item-img card-img-top'));
 			$string .= "<div class='card-body'>";
-			$string .=  "<h4>" . $posts->title . "</h4>";
+			$string .=  "<h4>" .  wp_trim_words($posts->title, 5) . "</h4>";
 			$string .= $stats;
 			$string .= $excerpt;
 			$string .=  "</div>";
@@ -242,14 +242,14 @@ function my_custom_popular_posts_html_list($popular_posts, $instance){
 
 	$output = ' <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="d-flex">';
+                        <div class="card-group d-flex">';
 
     // loop the array of popular posts objects
 	$output = loopStartAtStopAt(0,4, $output, $popular_posts, $instance);
 	$output .= '</div>';
 	$output .= '</div>';
 	$output .= '<div class="carousel-item">
-						<div class="d-flex">';
+						<div class="card-group d-flex">';
 	$output = loopStartAtStopAt(4,8, $output, $popular_posts, $instance);
 	$output .= '</div>';
 	$output .= '</div>';

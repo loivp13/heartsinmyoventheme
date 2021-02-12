@@ -25,9 +25,6 @@
 	}
 }
 
-a:hover {
-	text-decoration: none;
-}
 *:focus {
 	outline: none;
 	box-shadow: none !important;
@@ -46,8 +43,6 @@ a:hover {
 	flex-direction: column;
 	position: relative;
 	padding: 1rem;
-	padding-right: 10%;
-	padding-left: 10%;
 	@include respond("sm") {
 		padding-right: 5%;
 		padding-left: 5%;
@@ -72,4 +67,22 @@ a:hover {
 
 ::marker {
 	display: none;
+}
+
+.fa-chevron-left {
+	color: rgba(255, 255, 255, 0.918);
+	&:hover {
+		color: white;
+	}
+}
+.fa-chevron-right {
+	color: rgba(255, 255, 255, 0.918);
+
+	&:hover {
+		color: white;
+	}
+}
+
+input {
+	font-family: $font-monts;
 }

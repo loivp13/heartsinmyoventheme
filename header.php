@@ -34,7 +34,7 @@ $container = get_theme_mod('understrap_container_type');
 
 	<?php do_action('wp_body_open'); ?>
 	<div id='page' class="header site bg-white">
-		<div class="row no-md-gutters d-flex bg-white flex-wrap flex-sm-no-wrap justify-content-end justify-content-lg-start align-items-end align-item-sm-center align-items-lg-center mb-md-0">
+		<div class="row no-md-gutters d-flex bg-white flex-wrap flex-sm-no-wrap justify-content-end justify-content-lg-start align-items-end  mb-md-0">
 
 			<!-- .site-navigation -->
 			<nav id="main-nav" class="col-2 col-xl-6 navbar navbar-expand-xl bg-white nav justify-content-md-around justify-content-xl-center  order-1 order-xl-2" aria-labelledby="main-nav-label col-md-3">
@@ -142,11 +142,11 @@ $container = get_theme_mod('understrap_container_type');
 				</a>
 			</div>
 			<!-- Mobile Search Button -->
-			<button class="col-2 d-block d-xl-none btn btn-icon btn-primary bg-white text-primary border-none btn-mobile order-3">
+			<button class="col-2 d-block d-xl-none btn btn-icon btn-primary bg-white text-tertiary border-none btn-mobile order-3">
 				<i class="fa fa-search"></i>
 			</button>
 			<!-- Search widget -->
-			<div class="header_widget justify-content-md-end col-12 col-md-3 order-4 order-md-3 mt-2 animate-slideRight">
+			<div class="header_widget justify-content-end col-5 col-md-3 order-4 order-md-3 mt-2 animate-slideRight">
 				<?php dynamic_sidebar('navmenu') ?>
 			</div>
 

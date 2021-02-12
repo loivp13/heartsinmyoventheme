@@ -25,7 +25,7 @@ if (is_front_page()) {
     <div class="carousel-hero ">
         <div class="row d-flex justify-content-center">
             <div class="col-12 ">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide"  data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -95,13 +95,13 @@ if (is_front_page()) {
 
 <div class="carousel-favorites mb-5">
 
-    <div class="container">
+    <div class="container p-0">
         <div class="carousel-favorites-title text-light-dark">
             LYNNA'S FAVORITES
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div id="carousel-favorites" class="carousel slide" data-ride="carousel">
+                <div id="carousel-favorites" class="carousel slide" data-ride="carousel" >
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-favorites" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-favorites" data-slide-to="1"></li>
@@ -153,7 +153,7 @@ if (is_front_page()) {
 
                         </div>
                         <div class="carousel-item">
-                            <div class="row">
+                            <div class="card-group d-flex">
                                 <?php
 
                                 // The Query
@@ -216,20 +216,20 @@ if (is_front_page()) {
 
 <div class="carousel-favorites mb-5">
 
-    <div class="container">
+    <div class="container p-0">
         <div class="carousel-favorites-title text-light-dark">
             READER'S FAVORITES
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div id="carousel-reader-favorites" class="carousel slide" data-ride="carousel">
+                <div id="carousel-reader-favorites" class="carousel slide" data-ride="carousel" data-interval=false>
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-reader-favorites" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-reader-favorites" data-slide-to="1"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="d-flex">
+                            <div class="card-group d-flex">
                                 <?php
 
                                 // The Query
@@ -256,7 +256,7 @@ if (is_front_page()) {
                                                 <?php echo wp_get_attachment_image(get_post_thumbnail_id(get_the_id()), 'large', false, array('class' => 'carousel-item-img card-img-top')); ?>
                                                 <div class="card-body">
                                                     <h4><?php
-                                                        the_title();
+                                                          echo wp_trim_words(get_the_title(), 5);
                                                         ?></h4>
                                                 </div>
                                             </a>
@@ -276,7 +276,7 @@ if (is_front_page()) {
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="row">
+                            <div class="card-group d-flex">
                                 <?php
 
                                 // The Query
@@ -338,7 +338,7 @@ if (is_front_page()) {
     </div>
 </div>
 
-<div class="container mb-3">
+<div class="container mb-3 p-0">
     <div class="carousel-favorites-title text-light-dark">
         RECENTLY POPULAR
     </div>

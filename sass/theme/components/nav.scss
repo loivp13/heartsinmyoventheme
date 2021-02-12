@@ -6,6 +6,7 @@
 	width: 100vw;
 	left: -7vw;
 	z-index: 2000;
+	left: -3vw;
 	@include respond("sm") {
 		position: absolute;
 		left: -3vw;
@@ -17,11 +18,12 @@
 		// height: 50%;
 		width: 100vw;
 		left: -7vw;
-		top: 191%;
+		top: 132%;
 	}
 	@include respond("xl") {
 		position: initial;
 		left: initial;
+		padding: 0;
 		// height: 50%;
 	}
 }
@@ -31,6 +33,9 @@
 	@include respond("lg") {
 		position: relative;
 		left: 0vw;
+	}
+	@include respond("xl") {
+		align-self: flex-end;
 	}
 	& + img {
 		margin: 3rem 0rem;
@@ -62,7 +67,7 @@
 }
 
 .nav-link {
-	color: $light-dark;
+	color: $tertiary;
 	font-size: 20px;
 	text-transform: uppercase;
 	letter-spacing: 3px;
@@ -78,6 +83,7 @@
 		font-size: 16px;
 	}
 	@include respond("xl") {
+		padding: 0;
 		border-bottom: none;
 		font-size: 20px;
 	}

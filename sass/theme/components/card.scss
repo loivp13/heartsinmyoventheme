@@ -1,7 +1,22 @@
 .card {
+	overflow: hidden;
+	&:hover div h4 {
+		color: $onhovertext;
+	}
 	&-body {
-		& > h3 {
-			font-family: $font;
+		width: 97%;
+		padding: 0.1rem 0.3rem;
+		min-height: 54.5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(255, 255, 255, 0.911) !important;
+		@include respond("md") {
+			padding: 0.5rem 0.5rem;
+		}
+		@include respond("lg") {
+			padding: 0.7rem 0.7rem;
+			width: 98%;
 		}
 	}
 }

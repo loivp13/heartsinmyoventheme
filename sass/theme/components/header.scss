@@ -10,9 +10,12 @@
 		display: none;
 		@include respond("md") {
 		}
+		@include respond("lg") {
+			margin-left: auto;
+		}
 		@include respond("xl") {
 			display: block !important;
-			max-width: 12rem;
+			max-width: 23rem;
 		}
 	}
 }

@@ -1,16 +1,20 @@
 .entry {
 	&-content {
+		font-family: $font-monts;
 		& > p {
 			text-indent: 1rem;
 			color: $light-dark;
 		}
 	}
 	&-header {
+		font-family: $font-monts;
 		& + img {
 			margin-bottom: 1rem;
 		}
 	}
 	&-footer {
+		font-family: $font-monts;
+
 		& > .comments-link > a {
 			color: $light-dark;
 		}
@@ -24,5 +28,6 @@
 	&-meta {
 		margin-bottom: 1rem;
 		font-size: 0.7rem;
+		font-family: $font-monts;
 	}
 }

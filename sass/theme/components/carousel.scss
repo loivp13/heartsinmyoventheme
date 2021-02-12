@@ -9,15 +9,23 @@
 }
 .card {
 	border: none;
-	& > a > div > h4 {
-		font-size: 0.65rem;
-		font-family: $font;
-		padding: 0.5rem;
-		max-height: 2rem;
-		@include respond("md") {
-			font-size: 1rem;
+	& > a > div {
+		&:hover > h4 {
+			color: $onhovertext;
+		}
+		& > h4 {
+			font-size: 0.65rem;
+			font-family: $font;
+			padding: 0rem 0rem;
+			margin: 0rem 0rem;
+			max-height: 2rem;
+			color: $tertiary;
+			@include respond("md") {
+				font-size: 0.9rem;
+			}
 		}
 	}
+
 	&-body {
 		color: $light-dark;
 	}
@@ -63,6 +71,8 @@
 			display: block;
 			line-height: 1.5 !important;
 			margin: 0;
+			color: $tertiary;
+
 			@include respond("md") {
 				font-size: 1rem;
 			}
@@ -148,7 +158,58 @@
 		// transform: translateY(-10%);
 		// display: flex;
 		// justify-content: center;
+		&:hover div h3 {
+			color: $onhovertext;
+		}
 
+		& > .card-group {
+			& > div {
+				position: relative;
+				& > a {
+					& > .card-body {
+						text-align: center;
+						@include respond("md") {
+							position: absolute;
+							position: absolute;
+							bottom: 0px;
+							background-color: #e9e2dc;
+						}
+					}
+				}
+			}
+		}
+		& > .row {
+			& > div {
+				position: relative;
+				& > a {
+					& > .card-body {
+						text-align: center;
+						@include respond("md") {
+							position: absolute;
+							position: absolute;
+							bottom: 0px;
+							background-color: #e9e2dc;
+						}
+					}
+				}
+			}
+		}
+		& > .d-flex {
+			& > div {
+				position: relative;
+				& > a {
+					& > .card-body {
+						text-align: center;
+						@include respond("md") {
+							position: absolute;
+							position: absolute;
+							bottom: 0px;
+							background-color: #e9e2dc;
+						}
+					}
+				}
+			}
+		}
 		&-img {
 			height: auto;
 			width: auto;
