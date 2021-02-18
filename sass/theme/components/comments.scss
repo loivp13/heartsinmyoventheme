@@ -1,0 +1,28 @@
+.comments {
+	&-title {
+		margin-bottom: 1.5rem;
+	}
+	&-link {
+		text-transform: uppercase;
+	}
+}
+.comment {
+	&-metadata {
+		& > a {
+			& > time {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.reply {
+	margin-bottom: 1rem;
+	& > a {
+		text-transform: uppercase;
+	}
+}
+
+.fn {
+	font-family: $font;
+}

@@ -354,7 +354,7 @@ if (is_front_page()) {
                                     /* Get up to the top 5 commented posts from the last 7 days */
                                      wpp_get_mostpopular(array(
                                         'limit' => 8,
-                                        'range' => 'last7days',
+                                        'range' => 'last30days',
                                         'stats_views' => 0
                                     ));
                                 }

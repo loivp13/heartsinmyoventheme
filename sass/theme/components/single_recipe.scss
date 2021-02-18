@@ -96,6 +96,10 @@
 		font-family: $font-monts;
 		padding: 8px 16px;
 		color: white;
+		&:hover {
+			background-color: $tertiary;
+			cursor: pointer;
+		}
 	}
 	&-ingredients {
 		&-box {

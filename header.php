@@ -142,7 +142,7 @@ $container = get_theme_mod('understrap_container_type');
 				</a>
 			</div>
 			<!-- Mobile Search Button -->
-			<button class="col-2 d-block d-xl-none btn btn-icon btn-primary bg-white text-tertiary border-none btn-mobile order-3">
+			<button class="print-none col-2 d-block d-xl-none btn btn-icon btn-primary bg-white text-tertiary border-none btn-mobile order-3">
 				<i class="fa fa-search"></i>
 			</button>
 			<!-- Search widget -->

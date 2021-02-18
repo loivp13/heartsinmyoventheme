@@ -4,7 +4,7 @@
 		position: absolute;
 	}
 	.print-none {
-		display: none;
+		display: none !important;
 	}
 
 	#entry-content-print {

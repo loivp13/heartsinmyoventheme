@@ -72,7 +72,7 @@ if (!function_exists('understrap_entry_footer')) {
 			}
 		}
 		if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
-			echo '<div class="comments-link mt-2">';
+			echo '<div class="comments-link mt-3">';
 			comments_popup_link(esc_html__('Leave a comment', 'understrap'), esc_html__('1 Comment', 'understrap'), esc_html__('% Comments', 'understrap'));
 			echo '</div>';
 		}

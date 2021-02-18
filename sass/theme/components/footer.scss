@@ -30,8 +30,9 @@
 		align-items: center;
 		&-header {
 			color: $primary;
-			font-size: 4rem;
-			font-family: $font-nami;
+			font-size: 2rem;
+			font-family: $font;
+			margin-top: 3rem;
 		}
 		&-form {
 			width: 115%;
@@ -55,7 +56,7 @@
 					border: 1px solid $tertiary !important;
 					color: $light-dark !important;
 					font-size: 0.5rem;
-					padding-left: 5% !important;
+					padding-left: 3% !important;
 					width: 100% !important;
 					height: 100% !important ;
 					@include respond("lg") {
@@ -89,7 +90,7 @@
 			margin-bottom: 1rem;
 			text-align: center;
 			@include respond("lg") {
-				font-size: 2rem;
+				font-size: 1.5rem;
 			}
 		}
 	}

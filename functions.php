@@ -137,9 +137,9 @@ function wp97797_define_ajaxurl()
  * @param  array $instance
  * @return string
  */
-function my_custom_popular_posts_html_list($popular_posts, $instance){
-    
-						
+
+
+function my_custom_popular_posts_html_list($popular_posts, $instance ){		
 	
 	function loopStartAtStopAt($start, $stop, $string, $allPosts, $occurrence){
 		for($i = $start; $i < $stop; $i++){
@@ -249,7 +249,7 @@ function my_custom_popular_posts_html_list($popular_posts, $instance){
 	$output .= '</div>';
 	$output .= '</div>';
 	$output .= '<div class="carousel-item">
-						<div class="card-group d-flex">';
+	<div class="card-group d-flex">';
 	$output = loopStartAtStopAt(4,8, $output, $popular_posts, $instance);
 	$output .= '</div>';
 	$output .= '</div>';
@@ -290,3 +290,5 @@ function get_excerpt_by_id($post_id) {
 
     return $the_excerpt;
 }
+
+
