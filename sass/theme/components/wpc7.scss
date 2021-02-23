@@ -9,6 +9,7 @@
 		max-width: 80% !important;
 	}
 	&-submit {
+		text-transform: uppercase;
 		&:hover {
 			background-color: white !important;
 		}
@@ -25,7 +26,7 @@
 }
 .wpcf7-form-control {
 	background-color: $primary;
-	color: $light-dark !important;
+	color: $tertiary !important;
 	&:focus {
 		border: 1px solid $primary;
 	}

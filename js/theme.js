@@ -7078,16 +7078,6 @@
           easing: "linear"
         });
       }
-    }); //add onScroll
-
-    let scrollTop; //elements
-
-    let topRecipesSidebar = $(".top-recipes-container");
-    let infinitefooter = $(".infinite-footer");
-    $(window).scroll(e => {
-      if (scrollTop < 100) {
-        infinitefooter.css("display", "none");
-      }
     }); //Search Filter Toggle
     /////////// PRINT FRIENDLY///////////
 
@@ -7265,7 +7255,7 @@
         return;
       }
 
-      let headerDiv = nodeCreation("div", ["print-header-box", "d-flex", "justify-content-around", "align-items-center", "p-3"]);
+      let headerDiv = nodeCreation("div", ["print-header-box", "d-flex", "justify-content-around", "align-items-center", "p-1", "p-md-3"]);
       let headerLeft = nodeCreation("div", ["print-header-box-left", "col-4"]);
       let headerRight = nodeCreation("div", ["print-header-box-right", "col-8"]);
       let directionsDiv = nodeCreation("div", ["print-directions-box", "px-5", "pb-5"]);
@@ -7293,7 +7283,7 @@
         }
       }
 
-      let printContainer = nodeCreation("div", ["print-container", "mt-5"]);
+      let printContainer = nodeCreation("div", ["print-container"]);
       headerDiv.appendChild(headerLeft);
       headerDiv.appendChild(headerRight);
       printContainer.appendChild(headerDiv);
@@ -7369,25 +7359,13 @@
         if (searchForLastImage(e)) {
           e.classList.add("py-3");
         }
-      }); // console.log(indexOfLastImage);
-      // for (let i = 0; i <= updatedPrintElements.childElementCount - 2; i++) {
-      // 	if (indexOfLastImage.includes(i)) {
-      // 		console.log(
-      // 			"🚀 ~ file: custom-javascript.js ~ line 259 ~ indexOfLastImage.indexOf(i)",
-      // 			indexOfLastImage.indexOf(i)
-      // 		);
-      // 		updatedPrintElements[i].classList.add("py-5");
-      // 	}
-      // 	updatedPrintElements[i].classList.add("print-none");
-      // }
+      });
     }
   })(); ////////////////////AJAX////////////////////////////////
 
 
   $(document).ready(() => {
-    var fruit = "Banana";
-    let recipesContent = $(".search-results"); //ONLOAD SEARCH RECIPES VIA AJAX
-
+    //ONLOAD SEARCH RECIPES VIA AJAX
     postSearchRecipesAJAX(); //ONCLICK SEARCH RECIPES VIA AJAX
 
     $("#searchRecipes").on("click", debounce(function (e) {
@@ -7461,6 +7439,12 @@
         element.siblings().toggle(400);
       }
     });
+
+    if (window.innerWidth < 768) {
+      console.log("click");
+      searchHeading.click();
+    }
+
     titleContainer.each(function () {
       let element = $(this);
       element.on("hover", function (e) {
@@ -7503,6 +7487,51 @@
     if (printButton) {
       printButton.addEventListener("click", function () {
         window.print();
+      });
+    } //Switch Arrow on hover footer input {
+
+
+    let input = document.querySelector(".footer-connect-form");
+    let pinkArrow = document.querySelector(".footer_arrow_image-pink");
+    let greenArrow = document.querySelector(".footer_arrow_image-green");
+
+    if (input) {
+      input.addEventListener("mouseenter", function () {
+        pinkArrow.classList.toggle("d-block");
+        greenArrow.classList.toggle("d-none");
+      });
+      input.addEventListener("mouseleave", function () {
+        pinkArrow.classList.toggle("d-block");
+        greenArrow.classList.toggle("d-none");
+      });
+    } //Switch Arrow on hover BACK_TO_TOP_BUTTON
+    //elements
+
+
+    let icon = document.querySelector(".btn_back_to_top");
+    let pinkArrowIcon = document.querySelector(".btn_back_to_top-pink");
+    let greenArrowIcon = document.querySelector(".btn_back_to_top-green");
+
+    if (icon) {
+      icon.addEventListener("mouseenter", function () {
+        pinkArrowIcon.classList.toggle("d-block");
+        greenArrowIcon.classList.toggle("d-none");
+      });
+      icon.addEventListener("mouseleave", function () {
+        pinkArrowIcon.classList.toggle("d-block");
+        greenArrowIcon.classList.toggle("d-none");
+      });
+      let scrollTop; //No back_to_top_button when under 800px scrollTop
+
+      window.addEventListener("scroll", function () {
+        scrollTop = window.pageYOffset !== undefined ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        console.log(scrollTop);
+
+        if (scrollTop < 1100) {
+          icon.classList.add("d-hidden");
+        } else {
+          icon.classList.remove("d-hidden");
+        }
       });
     }
   })();

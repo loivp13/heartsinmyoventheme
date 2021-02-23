@@ -35,7 +35,7 @@
                         <div class="browse-filter browse-filter-open">
                             <?php
                             foreach ($filterSweetCategories as $keyword) :
-
+                                //replacing filter's categories to match back-end
                                 switch ($keyword->name) {
                                     case 'Brownies':
                                         $keyword->name = 'brownies/bars';

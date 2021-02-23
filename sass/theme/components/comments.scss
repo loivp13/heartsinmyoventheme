@@ -14,10 +14,21 @@
 			}
 		}
 	}
+	&-reply {
+		&-title {
+			font-family: $font;
+			text-transform: uppercase;
+			color: $primary;
+		}
+	}
+	&-notes {
+		font-size: 0.8rem;
+	}
 }
 
 .reply {
 	margin-bottom: 1rem;
+
 	& > a {
 		text-transform: uppercase;
 	}

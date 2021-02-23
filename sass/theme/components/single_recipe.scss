@@ -1,6 +1,5 @@
 .print {
 	&-container {
-		margin-top: 2rem;
 		border: 1px solid $light;
 	}
 	&-header {
@@ -68,6 +67,16 @@
 					& > span {
 						font-family: $font-monts !important;
 						font-weight: bold;
+						font-size: 1rem !important;
+						@include respond("xs") {
+							font-size: 1.5rem !important;
+						}
+						@include respond("sm") {
+							font-size: 1.5rem !important;
+						}
+						@include respond("md") {
+							font-size: 1.75rem !important;
+						}
 					}
 				}
 				& > div:nth-child(2) {
@@ -96,6 +105,7 @@
 		font-family: $font-monts;
 		padding: 8px 16px;
 		color: white;
+		z-index: 1;
 		&:hover {
 			background-color: $tertiary;
 			cursor: pointer;

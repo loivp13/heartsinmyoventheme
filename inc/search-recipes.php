@@ -86,6 +86,7 @@ function recipe_search()
 
         <div class="search-results-pagination col-12 d-flex justify-content-center">
             <div class="d-flex col-12 col-sm-8 col-md-12 col-lg-11 col-xl-7 align-items-center justify-content-around">
+            <!-- Hide Previous and First buttons -->
             <?php
             if ($paged > 1) {
                 $previousPaged = $paged-1;
@@ -93,16 +94,15 @@ function recipe_search()
                 echo
                     "
                         <div class=''>
-                                <a data-paged=1 class='search-results-first search-results-page-num'> << FIRST</a>
+                                <a data-paged=1 class='search-results-first search-results-page-num'> |<< </a>
                         </div>
                          <div class=''>
-                                <a data-paged=$previousPaged class='search-results-previous search-results-page-num'>  PREVIOUS</a>
+                                <a data-paged=$previousPaged class='search-results-previous search-results-page-num'>  PREV</a>
                         </div>
                         
                         ";
-            }
-            if ($paged > 1) {
-                echo '';
+            } else {
+                 echo"";
             }
         }
 
@@ -175,7 +175,7 @@ function recipe_search()
         if ($paged !== $max_pages) {
             echo "
                         <div class=''>
-                                <a data-paged=$max_pages class='search-results-page-num search-results-last'> LAST >></a>
+                                <a data-paged=$max_pages class='search-results-page-num search-results-last'> >>|</a>
                         </div>
                         ";
         }

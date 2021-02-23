@@ -1,4 +1,55 @@
+#submit {
+	background-color: $primary;
+	border: none;
+}
 .btn {
+	&_back_to_top {
+		z-index: 5000;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		transition: 0.5;
+		margin: 0 1.5rem 2rem 0;
+		border-radius: 50%;
+		box-shadow: 8px 8px 20px -5px;
+		@include respond("md") {
+			margin: 0 10rem 2rem 0;
+		}
+		@include respond("lg") {
+			width: 3rem;
+			& img {
+				width: 100%;
+			}
+		}
+		@include respond("xl") {
+			margin: 0 28% 2rem 0;
+		}
+		&:hover::after {
+			opacity: 1;
+		}
+		&::after {
+			content: "BACK TO TOP";
+			opacity: 0;
+			position: absolute;
+			width: 5rem;
+			text-align: center;
+			bottom: -61%;
+			right: -26%;
+			background-color: white;
+			border: 1px solid $light-dark;
+			font-size: 0.7rem;
+			padding: 0.3rem;
+			@include respond("lg") {
+				bottom: -35%;
+				right: -5%;
+			}
+		}
+		&-pink {
+			display: none;
+		}
+		&-green {
+		}
+	}
 	&-icon {
 		line-height: 0;
 		@include respond("sm") {

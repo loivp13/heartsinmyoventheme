@@ -62,7 +62,7 @@ if (!function_exists('understrap_entry_footer')) {
 			$categories_list = get_the_category_list(esc_html__(', ', 'understrap'));
 			if ($categories_list && understrap_categorized_blog()) {
 				/* translators: %s: Categories of current post */
-				printf('<span class="cat-links text-secondary">' . esc_html__('Posted in %s', 'understrap') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf('<span class="cat-links mb-3 text-secondary">' . esc_html__('Posted in %s', 'understrap') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list('', esc_html__(', ', 'understrap'));
@@ -72,7 +72,7 @@ if (!function_exists('understrap_entry_footer')) {
 			}
 		}
 		if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
-			echo '<div class="comments-link mt-3">';
+			echo '<div class="comments-link">';
 			comments_popup_link(esc_html__('Leave a comment', 'understrap'), esc_html__('1 Comment', 'understrap'), esc_html__('% Comments', 'understrap'));
 			echo '</div>';
 		}

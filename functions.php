@@ -90,7 +90,7 @@ add_action('manage_posts_custom_column', 'posts_custom_column_views');
 function my_custom_infinite_footer()
 {
 ?>
-	<div id="infinite-footer">
+	<div id="infinite-footer d-none">
 		<div class="container d-flex justify-content-end">
 			<div class="col-2 d-flex flex-column align-items-center">
 				<div class=" col-12 blog-credits-title text-center">BACK TO TOP</div>

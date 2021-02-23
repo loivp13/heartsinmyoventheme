@@ -25,6 +25,12 @@ $container = get_theme_mod('understrap_container_type');
 <?php endif; ?>
 
 <div class="wrapper" id="index-wrapper">
+	<div class="btn_back_to_top">
+		<a href="#index-wrapper">
+			<img class='btn_back_to_top-green' src="<?php echo get_template_directory_uri(); ?>/img/back_to_top-green.png">
+			<img class='btn_back_to_top-pink' src="<?php echo get_template_directory_uri(); ?>/img/back_to_top-pink.png">
+		</a>
+	</div>
 	<div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
 		<div class="row">

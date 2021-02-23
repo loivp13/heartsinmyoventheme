@@ -127,6 +127,8 @@
 	}
 	&-recipes {
 		padding: 0 0%;
+		margin: 0;
+
 		&-heading {
 			background-color: $light;
 			text-align: center;
@@ -142,6 +144,13 @@
 		}
 	}
 	&-results {
+		&-current {
+			&-page {
+				& > a {
+					color: $primary !important;
+				}
+			}
+		}
 		& > div {
 			font-family: $font;
 			& > img {
@@ -176,6 +185,13 @@
 		}
 		&-pagination {
 			margin-top: 2rem;
+			font-size: 0.75rem;
+			& > div {
+				padding: 0;
+			}
+			@include respond("lg") {
+				font-size: 1.25rem;
+			}
 		}
 		&-current-page {
 			& > a {
@@ -184,17 +200,51 @@
 		}
 
 		&-first {
-			border: 1px solid $primary;
 			padding: 0.3rem;
 			margin-left: 0.5rem;
 			white-space: nowrap;
+			position: relative;
+			&:hover:after {
+				opacity: 1;
+			}
+			&::after {
+				position: absolute;
+				content: "First Page";
+				bottom: 0;
+				left: 0;
+				font-size: 0.5rem;
+				transform: translate(0%, 100%);
+				color: $light-dark;
+				opacity: 0;
+				border: 1px solid $light-dark;
+				padding: 0.25rem;
+			}
+			@include respond("sm") {
+				transform: translate(-50%, 100%);
+			}
 		}
 		&-last {
-			border: 1px solid $primary;
 			word-spacing: nowrap;
 			padding: 0.3rem;
 			margin-left: 0.5rem;
 			white-space: nowrap;
+			position: relative;
+			&:hover:after {
+				opacity: 1;
+			}
+			&::after {
+				position: absolute;
+				content: "Last Page";
+				bottom: 0;
+				right: 0;
+				font-size: 0.5rem;
+				transform: translate(0%, 100%);
+
+				color: $light-dark;
+				opacity: 0;
+				border: 1px solid $light-dark;
+				padding: 0.25rem;
+			}
 		}
 	}
 	&-section {
